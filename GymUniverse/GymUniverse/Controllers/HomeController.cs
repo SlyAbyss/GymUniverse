@@ -1,6 +1,7 @@
-using GymUniverse.Models;
+using GymUniverse.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+
 
 namespace GymUniverse.Controllers
 {
@@ -8,6 +9,7 @@ namespace GymUniverse.Controllers
     {
         public IActionResult Index()
         {
+            ErrorViewModel model = new ErrorViewModel();
             return View();
         }
 

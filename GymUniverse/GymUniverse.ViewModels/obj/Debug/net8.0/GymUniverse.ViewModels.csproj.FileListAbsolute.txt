@@ -1,0 +1,12 @@
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\bin\Debug\net8.0\GymUniverse.ViewModels.deps.json
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\bin\Debug\net8.0\GymUniverse.ViewModels.dll
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\bin\Debug\net8.0\GymUniverse.ViewModels.pdb
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.AssemblyInfo.cs
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.sourcelink.json
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.dll
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\refint\GymUniverse.ViewModels.dll
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.pdb
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\ref\GymUniverse.ViewModels.dll
