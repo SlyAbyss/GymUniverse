@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using static GymUniverse.Constants.DataModelConstants;
 
 namespace GymUniverse.Models
 {
@@ -12,19 +13,20 @@ namespace GymUniverse.Models
         public int Id { get; set; }
 
         [Required]
+        [StringLength(CourseNameMaxLength,MinimumLength = CourseNameMinLength)]
         public string Name { get; set; } = string.Empty;
 
         [Required]
+        [StringLength(CourseDescriptionMaxLength, MinimumLength = CourseDescriptionMinLength)]
         public string Description { get; set; } = string.Empty;
 
         [Required]
+        [StringLength(CoursePriceMaxAmount, MinimumLength = CoursePriceMinAmount)]
         public int Price { get; set; }
 
         [Required]
+        [DisplayFormat(DataFormatString = DateFormat)]
         public DateTime Schedule { get; set; }
-
-        [Required]
-        public  TimeOnly CourseLength { get; set; }
 
         [Required]
         public Trainer Trainer { get; set; } = null!;
