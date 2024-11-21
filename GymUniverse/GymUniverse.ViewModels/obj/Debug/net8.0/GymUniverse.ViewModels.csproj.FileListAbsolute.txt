@@ -10,3 +10,7 @@ C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniver
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\refint\GymUniverse.ViewModels.dll
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.pdb
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\ref\GymUniverse.ViewModels.dll
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\bin\Debug\net8.0\GymUniverse.Constants.dll
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\bin\Debug\net8.0\GymUniverse.Constants.pdb
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.csproj.AssemblyReference.cache
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\GymUniverse.ViewModels.csproj.CopyComplete

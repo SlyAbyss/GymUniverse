@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "GymUniverse.ViewModels/1.0.0": {
+        "dependencies": {
+          "GymUniverse.Constants": "1.0.0"
+        },
         "runtime": {
           "GymUniverse.ViewModels.dll": {}
+        }
+      },
+      "GymUniverse.Constants/1.0.0": {
+        "runtime": {
+          "GymUniverse.Constants.dll": {}
         }
       }
     }
   },
   "libraries": {
     "GymUniverse.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GymUniverse.Constants/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,0 +1,12 @@
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\bin\Debug\net8.0\GymUniverse.Constants.deps.json
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\bin\Debug\net8.0\GymUniverse.Constants.dll
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\bin\Debug\net8.0\GymUniverse.Constants.pdb
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\obj\Debug\net8.0\GymUniverse.Constants.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\obj\Debug\net8.0\GymUniverse.Constants.AssemblyInfoInputs.cache
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\obj\Debug\net8.0\GymUniverse.Constants.AssemblyInfo.cs
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\obj\Debug\net8.0\GymUniverse.Constants.csproj.CoreCompileInputs.cache
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\obj\Debug\net8.0\GymUniverse.Constants.sourcelink.json
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\obj\Debug\net8.0\GymUniverse.Constants.dll
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\obj\Debug\net8.0\refint\GymUniverse.Constants.dll
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\obj\Debug\net8.0\GymUniverse.Constants.pdb
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.Constants\obj\Debug\net8.0\ref\GymUniverse.Constants.dll
