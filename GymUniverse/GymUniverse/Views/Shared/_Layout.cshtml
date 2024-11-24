@@ -42,7 +42,10 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">My Courses</a></li>
+                        @if (User!.IsInRole("Administrator"))
+                        {
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index">My Courses</a></li>
+                        }                     
                         <li><a asp-area="" asp-controller="Home" asp-action="Index">Locations</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Index">Prices</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Index">Careers</a></li>

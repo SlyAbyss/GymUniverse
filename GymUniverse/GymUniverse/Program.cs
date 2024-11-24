@@ -17,6 +17,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequireUppercase = false;
     options.Password.RequireLowercase = false;
 })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<GymUniverseDbContext>();
 builder.Services.AddControllersWithViews();
 

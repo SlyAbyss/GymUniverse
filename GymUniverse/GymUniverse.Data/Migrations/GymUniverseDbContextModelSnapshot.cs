@@ -214,6 +214,20 @@ namespace GymUniverse.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "Administrator",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        },
+                        new
+                        {
+                            Id = "User",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -304,6 +318,23 @@ namespace GymUniverse.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "54054690-f58f-4451-8cea-65f31ad57b3b",
+                            Email = "test-user@test.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "TEST-USER",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAI8y3mdLu0hxFIRUsWng/41KYWFKLeGi2mBDDCsyCoXIaCTj/OU5BTBMkrMHSsUpg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "SecurityStampTest01",
+                            TwoFactorEnabled = false,
+                            UserName = "test-user"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -368,6 +399,13 @@ namespace GymUniverse.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
+                            RoleId = "Administrator"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
