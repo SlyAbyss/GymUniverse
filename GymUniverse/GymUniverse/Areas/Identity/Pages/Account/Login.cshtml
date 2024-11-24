@@ -5,12 +5,72 @@
     ViewData["Title"] = "Log in";
 }
 
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: url('/images/Galaxy-background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px 0px;
+        text-align: center;
+        border-radius: 25px;
+        background: rgba(25, 0, 150, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+    }
+
+    h1 {
+        font-size: 2.8em;
+        color: #e39ff6;
+        text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+    }
+
+    p {
+        font-size: 1.2em;
+        line-height: 1.8;
+        color: #dcdcdc;
+        margin: 25px 0px;
+    }
+
+    .row {
+        justify-content: center;
+    }
+
+    footer .container {
+        padding: 0px;
+    }
+
+    h2 {
+        color: #fff;
+    }
+
+    button {
+        background-color: #d17cff !important;
+        color: #fff !important;
+    }
+
+    button:hover {
+        background-color: #85309c !important;
+    }
+</style>
+
 <h1>@ViewData["Title"]</h1>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-7">
         <section>
             <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
@@ -24,7 +84,7 @@
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg">Log in</button>
                 </div>
             </form>
         </section>

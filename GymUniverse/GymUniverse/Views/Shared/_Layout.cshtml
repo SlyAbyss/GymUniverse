@@ -7,27 +7,50 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/GymUniverse.styles.css" asp-append-version="true" />
+
+    <style>
+        nav {
+            background-color: #0f001e;
+            text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+            border-bottom: solid 1px #ff6bff;
+        }
+
+        li a {
+            font-size: 20px;
+            color: #e39ff6;
+            display: block;
+            padding: .5rem 1rem;
+            text-decoration: none;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+        }
+
+        a:hover {
+            color: #85309c;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GymUniverse</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/Logo.png" width="70" height="70" class="d-inline-block align-top" alt="">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">My Courses</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Location</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Prices</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Careers</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">My Courses</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Locations</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Prices</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Careers</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Contact Us</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
                     </ul>
-                    <partial name="_LoginPartial"/>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
@@ -38,7 +61,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted">
         <div class="container">
             &copy; @{
                 var currentYear = DateTime.Now.Year;
