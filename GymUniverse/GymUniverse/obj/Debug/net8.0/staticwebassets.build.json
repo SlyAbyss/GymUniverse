@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SRCidnkz51Kh9Ff8E6/naraZjwWa4TF7+wcQTe4BVxk=",
+  "Hash": "36AM+avnrzjOBS0XBpeBjT73jZS3zVEWeOmePWpnRkI=",
   "Source": "GymUniverse",
   "BasePath": "_content/GymUniverse",
   "Mode": "Default",
@@ -1288,6 +1288,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Galaxy-background.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\LocationPH.png",
+      "SourceId": "GymUniverse",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\",
+      "BasePath": "_content/GymUniverse",
+      "RelativePath": "images/LocationPH.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\LocationPH.png"
     },
     {
       "Identity": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\Logo.png",

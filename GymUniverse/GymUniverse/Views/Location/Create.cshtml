@@ -1,0 +1,23 @@
+﻿@model GymUniverse.Models.Location
+
+<h2>Create a new Location</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label for="Name">Location Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div>
+        <label for="Address">Address</label>
+        <input asp-for="Address" class="form-control" />
+    </div>
+    <div>
+        <label for="ImageUrl">Location Image URL</label>
+        <input asp-for="ImageUrl" class="form-control">
+    </div>
+    <div>
+        <label for="Description">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Create Location</button>
+</form>

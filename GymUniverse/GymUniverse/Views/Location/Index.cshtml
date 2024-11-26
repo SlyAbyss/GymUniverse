@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GymUniverse.Models.Location>
+
+<h2>Our Locations</h2>
+<a asp-action="Create" class="btn btn-primary">Create Location</a> @*For admins only*@
+<hr />
+
+<div class="text-center row">
+    @foreach (var location in Model)
+    {
+        <a asp-controller="Location" asp-action="Details" asp-route-id="@location.Id">
+            <div class="card col-3 h-100" style="width: 20rem; ">
+                @if (!string.IsNullOrEmpty(location.ImageUrl))
+                {
+                    <img src="@location.ImageUrl" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+                }
+                else
+                {
+                    <img src="~/images/LocationPH.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+                }
+                <div class="card-body" style="height: calc(100% - 150px); overflow: auto;">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="title-wrapper">
+                                <h4 class="card-title mt-1">@location.Name</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mb-0"><span class="fw-bold">Address: </span>@location.Address</p>
+                </div>
+                <div class="row gx-0">
+                    @if (true)//make it so only admins can edit(Edit is optional)
+                    {
+                        <div class="col-6 px-1">
+                            <a asp-controller="Location" asp-action="Edit" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100 fw-bold rounded btn-dark-text">Edit</a>
+                        </div>
+                        <div class="col-6 px-1">
+                            <a asp-controller="Location" asp-action="Delete" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100 fw-bold rounded btn-dark-text">Delete</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </a>
+    }
+</div>

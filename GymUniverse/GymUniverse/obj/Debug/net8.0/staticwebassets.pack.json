@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\images\\Galaxy-background.jpg"
     },
     {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\LocationPH.png",
+      "PackagePath": "staticwebassets\\images\\LocationPH.png"
+    },
+    {
       "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\Logo.png",
       "PackagePath": "staticwebassets\\images\\Logo.png"
     },
