@@ -42,7 +42,10 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li><a asp-area="" asp-controller="Home" asp-action="MyCourses">My Courses</a></li>
+                        @if (User!.IsInRole("User"))
+                        {                         
+                        <li><a asp-area="" asp-controller="MyCourses" asp-action="index">My Courses</a></li>
+                        }
                         <li><a asp-area="" asp-controller="Location" asp-action="Index">Locations</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Prices">Prices</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Careers">Careers</a></li>
@@ -60,7 +63,6 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="footer text-muted">
         <div class="container">
             &copy; @{

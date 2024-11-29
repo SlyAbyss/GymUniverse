@@ -1,44 +1,159 @@
 ﻿@model IEnumerable<GymUniverse.Models.Location>
 
-<h2>Our Locations</h2>
-<a asp-action="Create" class="btn btn-primary">Create Location</a> @*For admins only*@
-<hr />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Locations</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 150px;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: url('/images/Galaxy-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-<div class="text-center row">
-    @foreach (var location in Model)
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px 100px;
+            text-align: center;
+            border-radius: 25px;
+            background: rgba(25, 0, 150, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #e39ff6;
+            text-align: center;
+            text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+        }
+
+        .btn-primary {
+            background-color: #d17cff !important;
+            color: #fff !important;
+            border: none !important;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #85309c !important;
+                color: #fff !important;
+            }
+
+        .card {
+            background: rgba(25, 0, 50, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+            }
+
+            .card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            color: #e39ff6;
+            text-shadow: 0 0 10px #ff6bff;
+        }
+
+        .btn-warning {
+            background-color: #d17cff !important;
+            color: #fff !important;
+            border: none !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+            .btn-warning:hover {
+                background-color: #85309c !important;
+            }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        hr {
+            box-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+            border-top: 3px solid #ff6bff;
+        }
+
+        footer .container {
+            padding: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="flex">Our Locations</h1>
+    @if (User!.IsInRole("Administrator"))
     {
-        <a asp-controller="Location" asp-action="Details" asp-route-id="@location.Id">
-            <div class="card col-3 h-100" style="width: 20rem; ">
+        <a asp-action="Create" class="btn btn-primary">Create Location</a>
+    }
+    <hr />
+    <div class="row">
+        @foreach (var location in Model)
+        {
+            <div class="card col-3" style="width: 20rem;">
                 @if (!string.IsNullOrEmpty(location.ImageUrl))
                 {
-                    <img src="@location.ImageUrl" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+                    <img src="@location.ImageUrl" class="card-img-top">
                 }
                 else
                 {
-                    <img src="~/images/LocationPH.png" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+                    <img src="~/images/LocationPH.png" class="card-img-top">
                 }
-                <div class="card-body" style="height: calc(100% - 150px); overflow: auto;">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="title-wrapper">
-                                <h4 class="card-title mt-1">@location.Name</h4>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-body">
+                    <h4 class="card-title">@location.Name</h4>
                     <p class="mb-0"><span class="fw-bold">Address: </span>@location.Address</p>
                 </div>
                 <div class="row gx-0">
-                    @if (true)//make it so only admins can edit(Edit is optional)
+                    <div class="col-6 px-1">
+                        <a asp-controller="Location" asp-action="Details" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100">Details</a>
+                    </div>
+                    @if (User!.IsInRole("Administrator"))
                     {
                         <div class="col-6 px-1">
-                            <a asp-controller="Location" asp-action="Edit" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100 fw-bold rounded btn-dark-text">Edit</a>
-                        </div>
-                        <div class="col-6 px-1">
-                            <a asp-controller="Location" asp-action="Delete" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100 fw-bold rounded btn-dark-text">Delete</a>
+                            <a asp-controller="Location" asp-action="Delete" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100">Delete</a>
                         </div>
                     }
                 </div>
             </div>
-        </a>
-    }
-</div>
+        }
+    </div>
+</body>
+</html>

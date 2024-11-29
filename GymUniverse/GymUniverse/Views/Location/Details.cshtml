@@ -1,5 +1,155 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model GymUniverse.Models.Location
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Name</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 150px;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: url('/images/Galaxy-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px 50px;
+            text-align: center;
+            border-radius: 25px;
+            background: rgba(25, 0, 150, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #e39ff6;
+            text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+        }
+
+        .location-image img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .info {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #dcdcdc;
+            margin: 25px 0px;
+        }
+
+        strong {
+            color: #ff88ff;
+        }
+
+        .columns {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+            .column h2 {
+                font-size: 1.8em;
+                color: #e39ff6;
+                text-shadow: 0 0 15px #ff6bff, 0 0 30px #d17cff;
+                margin-bottom: 20px;
+            }
+
+            .column ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+                .column ul li {
+                    margin-bottom: 10px;
+                    font-size: 1.2em;
+                    color: #dcdcdc;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                    padding-bottom: 5px;
+                }
+
+        footer .container {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="location-image">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" alt="@Model.Name" />
+        }
+        else
+        {
+            <img src="~/images/LocationPH.png" alt="@Model.Name" />
+
+        }
+    </div>
+    <h1>@Model.Name</h1>
+    <div class="info">
+        <p><strong>Address:</strong> @Model.Address</p>
+        <p><strong>Description:</strong> @Model.Description</p>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <h2>Rooms</h2>
+            @if (Model.Rooms != null && Model.Rooms.Any())
+            {
+                <ul>
+                    @foreach (var room in Model.Rooms)
+                    {
+                        <li>@room.Name</li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No rooms available.</p>
+            }
+        </div>
+        <div class="column">
+            <h2>Trainers</h2>
+            @if (Model.Trainers != null && Model.Trainers.Any())
+            {
+                <ul>
+                    @foreach (var trainer in Model.Trainers)
+                    {
+                        <li>@trainer.Name</li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No trainers available.</p>
+            }
+        </div>
+    </div>
+</body>
+</html>

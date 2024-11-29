@@ -104,14 +104,19 @@ namespace GymUniverse.Areas.Identity.Pages.Account
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
+            var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
 
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid E-mail.");
+                return Page();
+            }
 
             if (ModelState.IsValid)
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(user.UserName, Input.Password, true, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
@@ -126,6 +131,7 @@ namespace GymUniverse.Areas.Identity.Pages.Account
                     _logger.LogWarning("User account locked out.");
                     return RedirectToPage("./Lockout");
                 }
+                
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");

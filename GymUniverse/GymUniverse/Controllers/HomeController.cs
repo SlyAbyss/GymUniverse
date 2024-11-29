@@ -22,5 +22,20 @@ namespace GymUniverse.Controllers
         {
             return View();
         }
+
+        public IActionResult Careers()
+        {
+            return View();
+        }
+
+        public IActionResult Prices()
+        {
+            return View();
+        }
+
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
     }
 }
