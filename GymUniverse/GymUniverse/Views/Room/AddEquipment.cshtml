@@ -1,0 +1,30 @@
+﻿@model GymUniverse.ViewModels.EquipmentRoomViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Equipment to Room</title>
+</head>
+<body>
+    <h1>Add Equipment to @Model.RoomName</h1>
+
+    <form method="post">
+        <div>
+            @foreach (var equipment in Model.Equipment)
+            {
+                <div>
+                    @if ((Model.SelectedEquipment.Contains(equipment.Id))){
+
+                    <input type="checkbox" asp-for="SelectedEquipment" value="@equipment.Id"/>
+                    
+                        }
+                    <label>@equipment.Name</label>
+                </div>
+            }
+        </div>
+        <button type="submit">Save Equipment</button>
+    </form>
+</body>
+</html>

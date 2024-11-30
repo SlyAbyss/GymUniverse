@@ -21,5 +21,7 @@ namespace GymUniverse.Models
 
         [StringLength(UrlMaxLength,MinimumLength = UrlMinLength)]
         public string? ImageUrl { get; set; }
+
+        public ICollection<RoomEquipment> RoomEquipments { get; set; }
     }
 }

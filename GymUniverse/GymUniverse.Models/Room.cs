@@ -28,6 +28,6 @@ namespace GymUniverse.Models
         [ForeignKey("LocationId")]
         public Location Location { get; set; }
 
-        public ICollection<Equipment> Equipment { get; set; } = new List<Equipment>();
+        public ICollection<RoomEquipment> RoomsEquipments { get; set; }
     }
 }

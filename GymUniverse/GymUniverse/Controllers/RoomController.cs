@@ -2,6 +2,7 @@
 using GymUniverse.Data;
 using GymUniverse.Models;
 using Microsoft.EntityFrameworkCore;
+using GymUniverse.ViewModels;
 
 namespace GymUniverse.Controllers
 {
@@ -54,6 +55,66 @@ namespace GymUniverse.Controllers
             }
 
             return View(room);
+        }
+
+        [HttpGet]
+        public IActionResult AddEquipment(int roomId)
+        {
+            var room = _context.Rooms
+                .Include(r => r.RoomsEquipments)                                    
+                .ThenInclude(re => re.Equipment)                                     
+                .FirstOrDefault(r => r.Id == roomId);
+
+            if (room == null)
+            {
+                return NotFound();
+            }
+
+            var allEquipments = _context.Equipment.ToList();
+
+            var model = new EquipmentRoomViewModel
+            {
+                RoomId = roomId,
+                RoomName = room.Name,
+                Equipment = allEquipments,
+                SelectedEquipment = room.RoomsEquipments.Select(re => re.EquipmentId).ToList()
+            };
+
+            return View(model);
+        }
+
+        // POST: Room/AddEquipment/{roomId}
+        [HttpPost]
+        public async Task<IActionResult> AddEquipment(EquipmentRoomViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var room = await _context.Rooms.Include(r => r.RoomsEquipments).FirstOrDefaultAsync(r => r.Id == model.RoomId);
+
+                if (room == null)
+                {
+                    return NotFound();
+                }
+
+                // Remove existing associations
+                var existingAssociations = _context.RoomsEquipments.Where(re => re.RoomId == model.RoomId).ToList();
+                _context.RoomsEquipments.RemoveRange(existingAssociations);
+
+                // Add new associations
+                foreach (var equipmentId in model.SelectedEquipment)
+                {
+                    _context.RoomsEquipments.Add(new RoomEquipment
+                    {
+                        RoomId = model.RoomId,
+                        EquipmentId = equipmentId
+                    });
+                }
+
+                await _context.SaveChangesAsync();
+                return RedirectToAction("RoomDetails", new { id = model.RoomId });
+            }
+
+            return View(model);
         }
     }
 }

@@ -714,7 +714,8 @@
       },
       "GymUniverse.ViewModels/1.0.0": {
         "dependencies": {
-          "GymUniverse.Constants": "1.0.0"
+          "GymUniverse.Constants": "1.0.0",
+          "GymUniverse.Models": "1.0.0"
         },
         "runtime": {
           "GymUniverse.ViewModels.dll": {}

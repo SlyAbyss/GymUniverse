@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,6 +30,7 @@ namespace GymUniverse.Data
 
         public DbSet<Equipment> Equipment { get; set; } = null!;
 
+        public DbSet<RoomEquipment> RoomsEquipments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -48,6 +50,19 @@ namespace GymUniverse.Data
             builder.ApplyConfiguration<IdentityUserRole<string>>(admin);
 
             base.OnModelCreating(builder);
+
+            builder.Entity<RoomEquipment>()
+           .HasKey(re => new { re.RoomId, re.EquipmentId });
+
+            builder.Entity<RoomEquipment>()
+                .HasOne(re => re.Room)
+                .WithMany(r => r.RoomsEquipments)
+                .HasForeignKey(re => re.RoomId);
+
+            builder.Entity<RoomEquipment>()
+                .HasOne(re => re.Equipment)
+                .WithMany(e => e.RoomEquipments)
+                .HasForeignKey(re => re.EquipmentId);
         }
     }
 

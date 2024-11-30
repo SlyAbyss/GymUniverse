@@ -79,12 +79,7 @@ namespace GymUniverse.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("RoomId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("RoomId");
 
                     b.ToTable("Equipment");
                 });
@@ -151,6 +146,21 @@ namespace GymUniverse.Data.Migrations
                     b.HasIndex("LocationId");
 
                     b.ToTable("Rooms");
+                });
+
+            modelBuilder.Entity("GymUniverse.Models.RoomEquipment", b =>
+                {
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EquipmentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RoomId", "EquipmentId");
+
+                    b.HasIndex("EquipmentId");
+
+                    b.ToTable("RoomsEquipments");
                 });
 
             modelBuilder.Entity("GymUniverse.Models.Trainer", b =>
@@ -324,13 +334,13 @@ namespace GymUniverse.Data.Migrations
                         {
                             Id = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "782e3cbd-f971-4cb9-b6ec-c5d90d8b0907",
+                            ConcurrencyStamp = "0fe7a753-cc38-40cb-ae94-14e1e0c00071",
                             Email = "gymadmin@gymuniverse.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "GYMADMIN@GYMUNIVERSE.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEC4KLeMr/yKwluA/taci5Ym7G96DaWX5KKrkxCg3VpkMxIehJiALCkeugInT8nMmzg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEANNoujrYba2EtYBNHF3dvB1xmcBeqfPW1Ur1BITavF/iHCi/H9U7sdauHOVlietVA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "SecurityStampTest01",
                             TwoFactorEnabled = false,
@@ -441,13 +451,6 @@ namespace GymUniverse.Data.Migrations
                     b.Navigation("Trainer");
                 });
 
-            modelBuilder.Entity("GymUniverse.Models.Equipment", b =>
-                {
-                    b.HasOne("GymUniverse.Models.Room", null)
-                        .WithMany("Equipment")
-                        .HasForeignKey("RoomId");
-                });
-
             modelBuilder.Entity("GymUniverse.Models.Room", b =>
                 {
                     b.HasOne("GymUniverse.Models.Location", "Location")
@@ -457,6 +460,25 @@ namespace GymUniverse.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("GymUniverse.Models.RoomEquipment", b =>
+                {
+                    b.HasOne("GymUniverse.Models.Equipment", "Equipment")
+                        .WithMany("RoomEquipments")
+                        .HasForeignKey("EquipmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GymUniverse.Models.Room", "Room")
+                        .WithMany("RoomsEquipments")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Equipment");
+
+                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("GymUniverse.Models.Trainer", b =>
@@ -521,6 +543,11 @@ namespace GymUniverse.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("GymUniverse.Models.Equipment", b =>
+                {
+                    b.Navigation("RoomEquipments");
+                });
+
             modelBuilder.Entity("GymUniverse.Models.Location", b =>
                 {
                     b.Navigation("Rooms");
@@ -530,7 +557,7 @@ namespace GymUniverse.Data.Migrations
 
             modelBuilder.Entity("GymUniverse.Models.Room", b =>
                 {
-                    b.Navigation("Equipment");
+                    b.Navigation("RoomsEquipments");
                 });
 
             modelBuilder.Entity("GymUniverse.Models.Trainer", b =>

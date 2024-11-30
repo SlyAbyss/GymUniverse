@@ -1,1 +1,139 @@
-﻿
+﻿@model GymUniverse.Models.Room
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Name - Room Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 150px;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: url('/images/Galaxy-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px 50px;
+            text-align: center;
+            border-radius: 25px;
+            background: rgba(25, 0, 150, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #e39ff6;
+            text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+        }
+
+        .room-image img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .description {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #dcdcdc;
+            margin: 25px 0px;
+        }
+
+        .equipment-list {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #dcdcdc;
+        }
+
+            .equipment-list ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                .equipment-list ul li {
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                    padding-bottom: 5px;
+                }
+
+        .btn-warning {
+            background-color: #d17cff !important;
+            color: #fff !important;
+            border: none !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+            .btn-warning:hover {
+                background-color: #85309c !important;
+            }
+
+        hr {
+            box-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+            border-top: 3px solid #ff6bff;
+        }
+
+        footer .container {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="room-image">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" alt="@Model.Name" />
+        }
+        else
+        {
+            <img src="~/images/RoomPH.png" alt="@Model.Name" />
+        }
+    </div>
+
+    <h1>@Model.Name</h1>
+    <div class="description">
+        <p><strong>Description:</strong> @Model.Description</p>
+    </div>
+
+    <div class="equipment-list">
+        <h2>Equipment</h2>
+        <hr />
+        @if (Model.RoomsEquipments != null && Model.RoomsEquipments.Any())
+        {
+            <ul>
+                @foreach (var roomEquipment in Model.RoomsEquipments)
+                {
+                    <li>@roomEquipment.Equipment.Name</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No equipment available for this room.</p>
+        }
+    </div>
+
+    <div>
+        @if (User.IsInRole("Administrator"))
+        {
+            <a asp-controller="Room" asp-action="AddEquipment" asp-route-roomId="@Model.Id" class="btn btn-warning">Add Equipment</a>
+        }
+    </div>
+</body>
+</html>

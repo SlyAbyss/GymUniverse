@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static GymUniverse.Constants.DataModelConstants;
 
 namespace GymUniverse.Models
@@ -28,7 +29,9 @@ namespace GymUniverse.Models
         [DisplayFormat(DataFormatString = DateFormat)]
         public DateTime Schedule { get; set; }
 
-        [Required]
+        public int TrainerId { get; set; }
+
+        [ForeignKey("TrainerId")]
         public Trainer Trainer { get; set; } = null!;
     }
 }
