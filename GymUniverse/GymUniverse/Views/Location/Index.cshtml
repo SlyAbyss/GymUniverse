@@ -122,7 +122,7 @@
     <h1 style="flex">Our Locations</h1>
     @if (User!.IsInRole("Administrator"))
     {
-        <a asp-action="Create" class="btn btn-primary">Create Location</a>
+        <a asp-action="CreateLocation" class="btn btn-primary">Create Location</a>
     }
     <hr />
     <div class="row">
@@ -143,7 +143,7 @@
                 </div>
                 <div class="row gx-0">
                     <div class="col-6 px-1">
-                        <a asp-controller="Location" asp-action="Details" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100">Details</a>
+                        <a asp-controller="Location" asp-action="LocationDetails" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100">Details</a>
                     </div>
                     @if (User!.IsInRole("Administrator"))
                     {

@@ -17,9 +17,7 @@ namespace GymUniverse.Data
     {
 
         public GymUniverseDbContext(DbContextOptions<GymUniverseDbContext> options)
-             : base(options)
-        {
-        }
+             : base(options) { }
 
         public DbSet<Location> Locations { get; set; } = null!;
 

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static GymUniverse.Constants.DataModelConstants;
 
 namespace GymUniverse.Models
@@ -11,6 +12,8 @@ namespace GymUniverse.Models
         [Key]
         public int Id { get; set; }
 
+
+
         [Required]
         [StringLength(RoomNameMaxLength, MinimumLength = RoomNameMinLength)]
         public string Name { get; set; } = string.Empty;
@@ -21,6 +24,11 @@ namespace GymUniverse.Models
 
         [StringLength(UrlMaxLength, MinimumLength = UrlMinLength)]
         public string? ImageUrl { get; set; }
+
+        public int LocationId { get; set; }
+
+        [ForeignKey("LocationId")]
+        public Location Location { get; set; }
 
         public ICollection<Equipment> Equipment { get; set; } = new List<Equipment>();
     }

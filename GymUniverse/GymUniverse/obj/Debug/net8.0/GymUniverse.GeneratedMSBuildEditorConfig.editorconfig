@@ -78,20 +78,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Location/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Location/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRGV0YWlscy5jc2h0bWw=
+[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Location/CreateLocation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cQ3JlYXRlTG9jYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Location/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Location/LocationDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cTG9jYXRpb25EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/MyCourses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlDb3Vyc2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Room/CreateRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxDcmVhdGVSb29tLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Room/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Shared/Error.cshtml]
