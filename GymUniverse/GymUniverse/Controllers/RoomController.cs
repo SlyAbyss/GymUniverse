@@ -2,7 +2,7 @@
 using GymUniverse.Data;
 using GymUniverse.Models;
 using Microsoft.EntityFrameworkCore;
-using GymUniverse.ViewModels;
+using GymUniverse.ViewModels.EquipmentViewModels;
 
 namespace GymUniverse.Controllers
 {
@@ -46,7 +46,8 @@ namespace GymUniverse.Controllers
         public async Task<IActionResult> RoomDetails(int id)
         {
             var room = await _context.Rooms
-                .Include(r => r.Location)
+                .Include(r => r.RoomsEquipments)
+                .ThenInclude(re => re.Equipment)
                 .FirstOrDefaultAsync(r => r.Id == id);
 
             if (room == null)
@@ -61,8 +62,8 @@ namespace GymUniverse.Controllers
         public IActionResult AddEquipment(int roomId)
         {
             var room = _context.Rooms
-                .Include(r => r.RoomsEquipments)                                    
-                .ThenInclude(re => re.Equipment)                                     
+                .Include(r => r.RoomsEquipments)
+                .ThenInclude(re => re.Equipment)
                 .FirstOrDefault(r => r.Id == roomId);
 
             if (room == null)
@@ -83,38 +84,44 @@ namespace GymUniverse.Controllers
             return View(model);
         }
 
-        // POST: Room/AddEquipment/{roomId}
         [HttpPost]
-        public async Task<IActionResult> AddEquipment(EquipmentRoomViewModel model)
+        public async Task<IActionResult> AddEquipment(int RoomId, int EquipmentId)
         {
-            if (ModelState.IsValid)
+            var room = await _context.Rooms.Include(r => r.RoomsEquipments).FirstOrDefaultAsync(r => r.Id == RoomId);
+            var equipment = await _context.Equipment.FindAsync(EquipmentId);
+
+            if (room == null || equipment == null)
             {
-                var room = await _context.Rooms.Include(r => r.RoomsEquipments).FirstOrDefaultAsync(r => r.Id == model.RoomId);
-
-                if (room == null)
-                {
-                    return NotFound();
-                }
-
-                // Remove existing associations
-                var existingAssociations = _context.RoomsEquipments.Where(re => re.RoomId == model.RoomId).ToList();
-                _context.RoomsEquipments.RemoveRange(existingAssociations);
-
-                // Add new associations
-                foreach (var equipmentId in model.SelectedEquipment)
-                {
-                    _context.RoomsEquipments.Add(new RoomEquipment
-                    {
-                        RoomId = model.RoomId,
-                        EquipmentId = equipmentId
-                    });
-                }
-
-                await _context.SaveChangesAsync();
-                return RedirectToAction("RoomDetails", new { id = model.RoomId });
+                return NotFound();
             }
 
-            return View(model);
+            // Check if the equipment is already associated with the room
+            if (!room.RoomsEquipments.Any(re => re.EquipmentId == EquipmentId))
+            {
+                _context.RoomsEquipments.Add(new RoomEquipment
+                {
+                    RoomId = RoomId,
+                    EquipmentId = EquipmentId
+                });
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("AddEquipment", new { roomId = RoomId });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveEquipment(int RoomId, int EquipmentId)
+        {
+            var roomEquipment = _context.RoomsEquipments
+                .FirstOrDefault(re => re.RoomId == RoomId && re.EquipmentId == EquipmentId);
+
+            if (roomEquipment != null)
+            {
+                _context.RoomsEquipments.Remove(roomEquipment);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("AddEquipment", new { roomId = RoomId });
         }
     }
 }
