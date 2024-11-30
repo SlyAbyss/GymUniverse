@@ -31,7 +31,6 @@ namespace GymUniverse.Controllers
 
         // Action to handle form submission for creating a new location
         [HttpPost]
-       //[ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateLocation(Location location)
         {
             if (ModelState.IsValid)

@@ -74,10 +74,11 @@ namespace GymUniverse.Data
                 .HasData(new IdentityUser
                 {
                     Id = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
-                    UserName = "test-user",
-                    NormalizedUserName = "TEST-USER",
-                    Email = "test-user@test.com",
-                    PasswordHash = _passwordHasher.HashPassword(null, "test123456"),
+                    UserName = "admin",
+                    NormalizedUserName = "ADMIN",
+                    Email = "gymadmin@gymuniverse.com",
+                    NormalizedEmail = "GYMADMIN@GYMUNIVERSE.COM",
+                    PasswordHash = _passwordHasher.HashPassword(null, "gym12345"),
                     SecurityStamp = "SecurityStampTest01"
                 });
         }

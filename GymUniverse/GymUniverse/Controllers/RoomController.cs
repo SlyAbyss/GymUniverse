@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GymUniverse.Data;
 using GymUniverse.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GymUniverse.Controllers
 {

@@ -138,7 +138,7 @@ namespace GymUniverse.Data.Migrations
                         .HasMaxLength(2048)
                         .HasColumnType("nvarchar(2048)");
 
-                    b.Property<int?>("LocationId")
+                    b.Property<int>("LocationId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -174,7 +174,7 @@ namespace GymUniverse.Data.Migrations
                         .HasMaxLength(2048)
                         .HasColumnType("nvarchar(2048)");
 
-                    b.Property<int?>("LocationId")
+                    b.Property<int>("LocationId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -324,16 +324,17 @@ namespace GymUniverse.Data.Migrations
                         {
                             Id = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "54054690-f58f-4451-8cea-65f31ad57b3b",
-                            Email = "test-user@test.com",
+                            ConcurrencyStamp = "782e3cbd-f971-4cb9-b6ec-c5d90d8b0907",
+                            Email = "gymadmin@gymuniverse.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            NormalizedUserName = "TEST-USER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAI8y3mdLu0hxFIRUsWng/41KYWFKLeGi2mBDDCsyCoXIaCTj/OU5BTBMkrMHSsUpg==",
+                            NormalizedEmail = "GYMADMIN@GYMUNIVERSE.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC4KLeMr/yKwluA/taci5Ym7G96DaWX5KKrkxCg3VpkMxIehJiALCkeugInT8nMmzg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "SecurityStampTest01",
                             TwoFactorEnabled = false,
-                            UserName = "test-user"
+                            UserName = "admin"
                         });
                 });
 
@@ -449,16 +450,24 @@ namespace GymUniverse.Data.Migrations
 
             modelBuilder.Entity("GymUniverse.Models.Room", b =>
                 {
-                    b.HasOne("GymUniverse.Models.Location", null)
+                    b.HasOne("GymUniverse.Models.Location", "Location")
                         .WithMany("Rooms")
-                        .HasForeignKey("LocationId");
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("GymUniverse.Models.Trainer", b =>
                 {
-                    b.HasOne("GymUniverse.Models.Location", null)
+                    b.HasOne("GymUniverse.Models.Location", "Location")
                         .WithMany("Trainers")
-                        .HasForeignKey("LocationId");
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
