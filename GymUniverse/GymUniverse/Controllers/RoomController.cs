@@ -15,29 +15,34 @@ namespace GymUniverse.Controllers
         }
 
         // GET: Room/Create
-        public IActionResult Create(int locationId)
+        [HttpGet]
+        public IActionResult CreateRoom(int locationId)
         {
-            ViewBag.LocationId = locationId;
-            return View();
+            var room = new Room
+            {
+                LocationId = locationId,
+            };
+
+            return View(room);
         }
 
         // POST: Room/Create
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Room room)
+        public async Task<IActionResult> CreateRoom(Room room)
         {
+            ViewBag.LocationId = room.LocationId;
+            ModelState.Remove(nameof(room.Location));
             if (ModelState.IsValid)
             {
                 _context.Rooms.Add(room);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Details", "Location", new { id = room.LocationId });
+                return RedirectToAction("LocationDetails", "Location", new { id = room.LocationId });
             }
-            ViewBag.LocationId = room.LocationId;
             return View(room);
         }
 
         // GET: Room/Details/{id}
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> RoomDetails(int id)
         {
             var room = await _context.Rooms
                 .Include(r => r.Location)

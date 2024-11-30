@@ -1,5 +1,112 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model GymUniverse.Models.Room
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: url('/images/Galaxy-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px 50px;
+            text-align: center;
+            border-radius: 25px;
+            background: rgba(25, 0, 150, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            font-size: 2.4em;
+            margin-bottom: 20px;
+            color: #e39ff6;
+            text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #e39ff6;
+            text-shadow: 0 0 10px #ff6bff, 0 0 20px #d17cff;
+            display: block;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+            input::placeholder, textarea::placeholder {
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+        .this {
+            background-color: #d17cff !important;
+            color: #fff !important;
+            border: none !important;
+            width: 30%;
+        }
+
+            .this:hover {
+                background-color: #85309c !important;
+                color: #fff !important;
+            }
+
+        footer .container {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+        <h1>Create a New Room</h1>
+        <form asp-action="CreateRoom" method="post">
+        <input type="hidden" asp-for="LocationId" />
+
+            <div class="form-group">
+                <label asp-for="Name">Room Name</label>
+                <input asp-for="Name" class="form-control" placeholder="Enter the Room name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl">Image URL</label>
+                <input asp-for="ImageUrl" class="form-control" placeholder="Paste the image URL here (optional)">
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="5" placeholder="Provide a brief description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        <button type="submit" class="btn this mt-3">Create Room</button>
+        </form>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html>

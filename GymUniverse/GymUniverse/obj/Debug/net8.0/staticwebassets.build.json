@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3CfychdvCRiq9fIkkd7l/pASZZsei8ZfKbkhNaSIDx8=",
+  "Hash": "b7ZNxVaSqzz302IVEUJ+DKDPaCtokMEMbxaD6+bUSSA=",
   "Source": "GymUniverse",
   "BasePath": "_content/GymUniverse",
   "Mode": "Default",
@@ -1326,6 +1326,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\RoomPH.png",
+      "SourceId": "GymUniverse",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\",
+      "BasePath": "_content/GymUniverse",
+      "RelativePath": "images/RoomPH.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\RoomPH.png"
     },
     {
       "Identity": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\js\\site.js",

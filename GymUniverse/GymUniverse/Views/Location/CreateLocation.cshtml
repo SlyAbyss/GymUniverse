@@ -80,19 +80,19 @@
         <form asp-action="CreateLocation" method="post">
             <div class="form-group">
                 <label for="Name">Location Name</label>
-                <input asp-for="Name" class="form-control" autocomplete="off" />
+                <input asp-for="Name" class="form-control" autocomplete="off" placeholder="Enter the Location name" />
             </div>
             <div class="form-group">
                 <label for="Address">Address</label>
-                <input asp-for="Address" class="form-control" autocomplete="off" />
+                <input asp-for="Address" class="form-control" autocomplete="off" placeholder="Enter the Location Address" />
             </div>
             <div class="form-group">
-                <label for="ImageUrl">Location Image URL</label>
-                <input asp-for="ImageUrl" class="form-control" autocomplete="off">
+                <label for="ImageUrl">Image URL</label>
+                <input asp-for="ImageUrl" class="form-control" autocomplete="off" placeholder="Paste the image URL here (optional)" />
             </div>
             <div class="form-group">
                 <label for="Description">Description</label>
-                <textarea asp-for="Description" class="form-control"></textarea>
+                <textarea asp-for="Description" class="form-control" rows="5" placeholder="Provide a brief description"></textarea>
             </div>
             <button type="submit" class="btn btn-primary this">Create Location</button>
         </form>

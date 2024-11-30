@@ -12,8 +12,6 @@ namespace GymUniverse.Models
         [Key]
         public int Id { get; set; }
 
-
-
         [Required]
         [StringLength(RoomNameMaxLength, MinimumLength = RoomNameMinLength)]
         public string Name { get; set; } = string.Empty;
