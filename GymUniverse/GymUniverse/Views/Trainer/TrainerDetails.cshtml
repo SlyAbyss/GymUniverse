@@ -1,1 +1,215 @@
-﻿
+﻿@model GymUniverse.Models.Trainer
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Name - Trainer Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 150px;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: url('/images/Galaxy-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px 50px;
+            text-align: center;
+            border-radius: 25px;
+            background: rgba(25, 0, 150, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #e39ff6;
+            text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+        }
+
+        .trainer-image img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .description {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #dcdcdc;
+            margin: 25px 0px;
+        }
+
+        .courses-list {
+            margin-top: 30px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); /* 2 cards per row */
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .course-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+            .course-item:hover {
+                box-shadow: 0 0 20px rgba(255, 107, 255, 0.7);
+            }
+
+
+        .course-name {
+            font-size: 1.8em;
+            color: #e39ff6;
+            text-shadow: 0 0 15px #ff6bff, 0 0 30px #d17cff;
+            margin-bottom: 20px;
+        }
+
+        .course-description {
+            font-size: 1.1em;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+        }
+
+        .course-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: #e39ff6;
+            text-shadow: 0 0 15px #ff6bff, 0 0 30px #d17cff;
+            padding: 10px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+            .course-overlay h4 {
+                margin: 0;
+                font-size: 1.2em;
+            }
+
+        .course-buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .this {
+            background-color: #d17cff;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .this:hover {
+                background-color: #85309c;
+                color: #fff !important;
+            }
+
+        .this-delete {
+            background-color: #e53935;
+            color: #fff !important;
+        }
+
+            .this-delete:hover {
+                background-color: #ad0006;
+                color: #fff !important;
+            }
+
+        hr {
+            box-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+            border-top: 3px solid #ff6bff;
+        }
+
+        footer .container {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="trainer-image">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" alt="@Model.Name" />
+        }
+        else
+        {
+            <img src="~/images/TrainerPH.png" alt="@Model.Name" />
+        }
+    </div>
+
+    <h1>@Model.Name</h1>
+    <div class="description">
+        <p><strong>Biography:</strong> @Model.Bio</p>
+    </div>
+
+    <div class="courses-list">
+        <h2>Courses offered by me</h2>
+        <hr />
+        @if (Model.Courses != null && Model.Courses.Any())
+        {
+            <div class="courses-grid">
+                @foreach (var course in Model.Courses)
+                {
+                    <div class="course-item">
+                        <div class="course-name">@course.Name</div>
+                        <hr />
+                        <div class="course-description">
+                            <p><strong>Scheduled on:</strong> @course.Schedule.ToString("dd-MMMM - [HH:mm]")</p>
+                            <p><strong>Price:</strong> $@course.Price</p>
+                            <p>@course.Description</p>
+                        </div>
+                        <div class="course-buttons">
+
+                            <a asp-action="AddToMyCourses" asp-route-courseId="@course.Id" class="btn this">Add to My Courses</a>
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <a asp-action="Delete" asp-route-courseId="@course.Id" class="btn this this-delete">Delete</a>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No courses available.</p>
+        }
+    </div>
+
+    <div>
+        @if (User.IsInRole("Administrator"))
+        {
+            <a asp-controller="Course" asp-action="CreateCourse" asp-route-trainerId="@Model.Id" class="this btn btn-warning" style="margin-top:50px;">Add a Course</a>
+        }
+    </div>
+</body>
+</html>

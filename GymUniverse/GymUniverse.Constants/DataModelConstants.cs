@@ -68,6 +68,6 @@ namespace GymUniverse.Constants
         public const int UrlMaxLength = 2048;
 
         //Constant for the date format
-        public const string DateFormat = "dd-MM-yyyy H:mm";
+        public const string DateFormat = "dd-MM H:mm";
     }
 }

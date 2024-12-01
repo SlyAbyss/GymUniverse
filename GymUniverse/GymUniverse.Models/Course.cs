@@ -14,7 +14,7 @@ namespace GymUniverse.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(CourseNameMaxLength,MinimumLength = CourseNameMinLength)]
+        [StringLength(CourseNameMaxLength, MinimumLength = CourseNameMinLength)]
         public string Name { get; set; } = string.Empty;
 
         [Required]
@@ -22,7 +22,7 @@ namespace GymUniverse.Models
         public string Description { get; set; } = string.Empty;
 
         [Required]
-        [StringLength(CoursePriceMaxAmount, MinimumLength = CoursePriceMinAmount)]
+        [Range(CoursePriceMinAmount, CoursePriceMaxAmount)]
         public int Price { get; set; }
 
         [Required]
