@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\images\\RoomPH.png"
     },
     {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\TrainerPH.png",
+      "PackagePath": "staticwebassets\\images\\TrainerPH.png"
+    },
+    {
       "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

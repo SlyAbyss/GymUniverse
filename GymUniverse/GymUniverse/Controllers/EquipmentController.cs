@@ -1,6 +1,7 @@
 ﻿using GymUniverse.Data;
 using GymUniverse.Models;
 using GymUniverse.ViewModels.EquipmentViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
@@ -16,6 +17,7 @@ namespace GymUniverse.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public IActionResult CreateEquipment(int roomId)
         {
             var equipment = new Equipment();

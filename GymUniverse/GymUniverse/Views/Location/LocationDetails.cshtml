@@ -148,6 +148,9 @@
             text-shadow: 0 0 15px #ff6bff, 0 0 30px #d17cff;
             padding: 15px;
             text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
 
             .this-card-overlay h4 {
@@ -235,14 +238,14 @@
                     @foreach (var trainer in Model.Trainers)
                     {
                         <div class="this-card">
-                            <a asp-controller="Room" asp-action="RoomDetails" asp-route-id="@trainer.Id" style="text-decoration: none;">
+                            <a asp-controller="Trainer" asp-action="TrainerDetails" asp-route-Id="@trainer.Id" style="text-decoration: none;">
                                 @if (!string.IsNullOrEmpty(trainer.ImageUrl))
                                 {
                                     <img src="@trainer.ImageUrl" alt="@trainer.Name" />
                                 }
                                 else
                                 {
-                                    <img src="~/images/RoomPH.png" alt="@trainer.Name" />
+                                    <img src="~/images/TrainerPH.png" alt="@trainer.Name" />
                                 }
                                 <div class="this-card-overlay">
                                     <h4>@trainer.Name</h4>

@@ -1,5 +1,6 @@
 ﻿using GymUniverse.Data;
 using GymUniverse.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,7 +24,9 @@ namespace GymUniverse.Controllers
         }
 
         // Action to display form for creating a new location
+
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public IActionResult CreateLocation()
         {
             return View();

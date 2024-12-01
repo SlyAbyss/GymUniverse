@@ -86,7 +86,6 @@
         <h1>Create a New Room</h1>
         <form asp-action="CreateRoom" method="post">
         <input type="hidden" asp-for="LocationId" />
-
             <div class="form-group">
                 <label asp-for="Name">Room Name</label>
             <input asp-for="Name" class="form-control" placeholder="Enter the Room name" autocomplete="off">
@@ -104,7 +103,6 @@
             </div>
         <button type="submit" class="btn this mt-3">Create Room</button>
         </form>
-
     @section Scripts {
         <partial name="_ValidationScriptsPartial" />
     }

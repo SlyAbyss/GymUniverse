@@ -3,6 +3,7 @@ using GymUniverse.Data;
 using GymUniverse.Models;
 using Microsoft.EntityFrameworkCore;
 using GymUniverse.ViewModels.EquipmentViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GymUniverse.Controllers
 {
@@ -15,8 +16,8 @@ namespace GymUniverse.Controllers
             _context = context;
         }
 
-        // GET: Room/Create
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public IActionResult CreateRoom(int locationId)
         {
             var room = new Room
@@ -42,7 +43,6 @@ namespace GymUniverse.Controllers
             return View(room);
         }
 
-        // GET: Room/Details/{id}
         public async Task<IActionResult> RoomDetails(int id)
         {
             var room = await _context.Rooms
@@ -52,13 +52,14 @@ namespace GymUniverse.Controllers
 
             if (room == null)
             {
-                return NotFound();
+                return NotFound("Room not found.");
             }
 
             return View(room);
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public IActionResult AddEquipment(int roomId)
         {
             var room = _context.Rooms
@@ -95,7 +96,6 @@ namespace GymUniverse.Controllers
                 return NotFound();
             }
 
-            // Check if the equipment is already associated with the room
             if (!room.RoomsEquipments.Any(re => re.EquipmentId == EquipmentId))
             {
                 _context.RoomsEquipments.Add(new RoomEquipment
