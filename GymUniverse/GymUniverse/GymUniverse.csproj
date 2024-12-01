@@ -7,10 +7,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\Trainer\**" />
-    <Content Remove="Views\Trainer\**" />
-    <EmbeddedResource Remove="Views\Trainer\**" />
-    <None Remove="Views\Trainer\**" />
+    <None Include="Views\Equipment\CreateEquipment.cshtml" />
+    <None Include="Views\Home\AboutUs.cshtml" />
+    <None Include="Views\Home\Careers.cshtml" />
+    <None Include="Views\Home\ContactUs.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Prices.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Location\CreateLocation.cshtml" />
+    <None Include="Views\Location\Index.cshtml" />
+    <None Include="Views\Location\LocationDetails.cshtml" />
+    <None Include="Views\MyCourses\Index.cshtml" />
+    <None Include="Views\Room\AddEquipment.cshtml" />
+    <None Include="Views\Room\CreateRoom.cshtml" />
+    <None Include="Views\Room\RoomDetails.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

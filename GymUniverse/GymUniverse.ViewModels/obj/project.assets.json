@@ -2964,11 +2964,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse.ViewModels\\GymUniverse.ViewModels.csproj",
+      "projectUniqueName": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.ViewModels\\GymUniverse.ViewModels.csproj",
       "projectName": "GymUniverse.ViewModels",
-      "projectPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse.ViewModels\\GymUniverse.ViewModels.csproj",
+      "projectPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.ViewModels\\GymUniverse.ViewModels.csproj",
       "packagesPath": "C:\\Users\\Yajo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse.ViewModels\\obj\\",
+      "outputPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Software\\Visual Studio\\Shared\\NuGetPackages"
@@ -2989,11 +2989,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse.Constants\\GymUniverse.Constants.csproj": {
-              "projectPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse.Constants\\GymUniverse.Constants.csproj"
+            "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.Constants\\GymUniverse.Constants.csproj": {
+              "projectPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.Constants\\GymUniverse.Constants.csproj"
             },
-            "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse.Models\\GymUniverse.Models.csproj": {
-              "projectPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse.Models\\GymUniverse.Models.csproj"
+            "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.Models\\GymUniverse.Models.csproj": {
+              "projectPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.Models\\GymUniverse.Models.csproj"
             }
           }
         }

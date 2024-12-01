@@ -27,12 +27,12 @@ namespace GymUniverse.Controllers
             return View(room);
         }
 
-        // POST: Room/Create
         [HttpPost]
         public async Task<IActionResult> CreateRoom(Room room)
         {
             ViewBag.LocationId = room.LocationId;
             ModelState.Remove(nameof(room.Location));
+            ModelState.Remove(nameof(room.RoomsEquipments));
             if (ModelState.IsValid)
             {
                 _context.Rooms.Add(room);

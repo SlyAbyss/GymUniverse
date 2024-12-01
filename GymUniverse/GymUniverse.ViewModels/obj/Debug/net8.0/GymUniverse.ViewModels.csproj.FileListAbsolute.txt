@@ -32,3 +32,5 @@ C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniver
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\GymUniverse.ViewModels\obj\Debug\net8.0\ref\GymUniverse.ViewModels.dll
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\GymUniverse.ViewModels\bin\Debug\net8.0\GymUniverse.Models.dll
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\GymUniverse.ViewModels\bin\Debug\net8.0\GymUniverse.Models.pdb
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\bin\Debug\net8.0\GymUniverse.Models.dll
+C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse.ViewModels\bin\Debug\net8.0\GymUniverse.Models.pdb

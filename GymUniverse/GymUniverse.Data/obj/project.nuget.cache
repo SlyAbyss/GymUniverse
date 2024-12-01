@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pUahoLsugOu9WhclxUJo1hpAuIkXOI6FOMD6dU9kHfXIKRWtgsLZuL9LYaGXfUm/qJIBJTqZu6Hl67pgSusq1w==",
+  "dgSpecHash": "8D9H8fXQQpc516WCR7ggxc7jnR1r5qUgHUyasA8Yi3eNwwRkHffaFVeoky5ZeoayG6plv3bCmqV/eFDlaba1mA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\GymUniverse.Data\\GymUniverse.Data.csproj",
+  "projectFilePath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.Data\\GymUniverse.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yajo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Yajo\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

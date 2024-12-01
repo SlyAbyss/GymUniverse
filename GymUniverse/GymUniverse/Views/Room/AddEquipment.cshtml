@@ -95,7 +95,7 @@
             }
 
         .this-add {
-            background-color: #d17cff !important;
+            background-color: #009925 !important;
             color: #fff !important;
             border: none !important;
             width: 30%;
@@ -107,14 +107,14 @@
             }
 
         .this-remove {
-            background-color: #d17cff !important;
+            background-color: #ad0006 !important;
             color: #fff !important;
             border: none !important;
             width: 40%;
         }
 
             .this-remove:hover {
-                background-color: #800004 !important;
+                background-color: #5e0003 !important;
                 color: #fff !important;
             }
 
@@ -171,10 +171,8 @@
             </div>
         }
     </div>
-
-    <!-- Buttons grouped together -->
     <div class="button-group">
-        <a asp-controller="Equipment" asp-action="CreateEquipment" class="btn this">Create Equipment</a>
+        <a asp-controller="Equipment" asp-action="CreateEquipment" asp-route-roomId="@Model.RoomId" class="btn this">Create Equipment</a>
         <a asp-controller="Room" asp-action="RoomDetails" asp-route-id="@Model.RoomId" class="btn this">Back to Room</a>
     </div>
 

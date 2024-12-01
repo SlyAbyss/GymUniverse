@@ -93,12 +93,13 @@
         }
 
         .btn-warning {
+            width:20%;
+            margin-top: 25px;
             background-color: #d17cff !important;
             color: #fff !important;
             border: none !important;
-            padding: 5px 10px;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 0.9em;
         }
 
             .btn-warning:hover {
@@ -165,7 +166,7 @@
     <div>
         @if (User.IsInRole("Administrator"))
         {
-            <a asp-controller="Room" asp-action="AddEquipment" asp-route-roomId="@Model.Id" class="btn btn-warning">Add Equipment</a>
+            <a asp-controller="Room" asp-action="AddEquipment" asp-route-roomId="@Model.Id" class="btn btn-warning">Eddit Equipment</a>
         }
     </div>
 </body>
