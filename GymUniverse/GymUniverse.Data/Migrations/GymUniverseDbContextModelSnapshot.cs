@@ -41,7 +41,6 @@ namespace GymUniverse.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("Price")
-                        .HasMaxLength(150)
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Schedule")
@@ -172,7 +171,6 @@ namespace GymUniverse.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Age")
-                        .HasMaxLength(60)
                         .HasColumnType("int");
 
                     b.Property<string>("Bio")
@@ -197,6 +195,21 @@ namespace GymUniverse.Data.Migrations
                     b.HasIndex("LocationId");
 
                     b.ToTable("Trainers");
+                });
+
+            modelBuilder.Entity("GymUniverse.Models.UserCourse", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "CourseId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("UsersCourses");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -277,6 +290,11 @@ namespace GymUniverse.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -329,23 +347,9 @@ namespace GymUniverse.Data.Migrations
 
                     b.ToTable("AspNetUsers", (string)null);
 
-                    b.HasData(
-                        new
-                        {
-                            Id = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "0fe7a753-cc38-40cb-ae94-14e1e0c00071",
-                            Email = "gymadmin@gymuniverse.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "GYMADMIN@GYMUNIVERSE.COM",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEANNoujrYba2EtYBNHF3dvB1xmcBeqfPW1Ur1BITavF/iHCi/H9U7sdauHOVlietVA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "SecurityStampTest01",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        });
+                    b.HasDiscriminator().HasValue("IdentityUser");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -440,6 +444,31 @@ namespace GymUniverse.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("GymUniverse.Models.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.HasDiscriminator().HasValue("ApplicationUser");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "aa3e41be-9906-431f-b2b5-92ec34e00756",
+                            Email = "gymadmin@gymuniverse.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "GYMADMIN@GYMUNIVERSE.COM",
+                            NormalizedUserName = "GYMADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC0rdj6ysQ3Ku0Zl8hBrysZtXHkPnjKEcHAFQ3WGLPCC7sGl8OI7Uj2Ln7s9ibuTkQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "SecurityStampTest01",
+                            TwoFactorEnabled = false,
+                            UserName = "gymadmin"
+                        });
+                });
+
             modelBuilder.Entity("GymUniverse.Models.Course", b =>
                 {
                     b.HasOne("GymUniverse.Models.Trainer", "Trainer")
@@ -490,6 +519,25 @@ namespace GymUniverse.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("GymUniverse.Models.UserCourse", b =>
+                {
+                    b.HasOne("GymUniverse.Models.Course", "Course")
+                        .WithMany("UserCourses")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GymUniverse.Models.ApplicationUser", "User")
+                        .WithMany("UserCourses")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -543,6 +591,11 @@ namespace GymUniverse.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("GymUniverse.Models.Course", b =>
+                {
+                    b.Navigation("UserCourses");
+                });
+
             modelBuilder.Entity("GymUniverse.Models.Equipment", b =>
                 {
                     b.Navigation("RoomEquipments");
@@ -563,6 +616,11 @@ namespace GymUniverse.Data.Migrations
             modelBuilder.Entity("GymUniverse.Models.Trainer", b =>
                 {
                     b.Navigation("Courses");
+                });
+
+            modelBuilder.Entity("GymUniverse.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("UserCourses");
                 });
 #pragma warning restore 612, 618
         }

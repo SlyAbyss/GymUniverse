@@ -188,8 +188,18 @@
                             <p>@course.Description</p>
                         </div>
                         <div class="course-buttons">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <form method="post" asp-controller="Course" asp-action="AddToMyCourses">
+                                    <input type="hidden" name="courseId" value="@Model.Id" />
+                                    <button type="submit" class="btn btn-primary">Add to My Courses</button>
+                                </form>
 
-                            <a asp-action="AddToMyCourses" asp-route-courseId="@course.Id" class="btn this">Add to My Courses</a>
+                                <form method="post" asp-controller="Course" asp-action="RemoveFromMyCourses">
+                                    <input type="hidden" name="courseId" value="@Model.Id" />
+                                    <button type="submit" class="btn btn-danger">Remove from My Courses</button>
+                                </form>
+                            }
                             @if (User.IsInRole("Administrator"))
                             {
                                 <a asp-action="Delete" asp-route-courseId="@course.Id" class="btn this this-delete">Delete</a>

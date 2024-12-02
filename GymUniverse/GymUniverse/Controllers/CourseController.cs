@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using GymUniverse.Models;
 using GymUniverse.Data;
-using NuGet.DependencyResolver;
+using Microsoft.AspNetCore.Identity;
 
 namespace GymUniverse.Controllers
 {
@@ -11,10 +11,12 @@ namespace GymUniverse.Controllers
     public class CourseController : Controller
     {
         private readonly GymUniverseDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CourseController(GymUniverseDbContext context)
+        public CourseController(GymUniverseDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -35,7 +37,7 @@ namespace GymUniverse.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> CreateCoruse(Course course)
+        public async Task<IActionResult> CreateCourse(Course course)
         {
             ModelState.Remove(nameof(course.Trainer));
             if (ModelState.IsValid)
@@ -47,5 +49,58 @@ namespace GymUniverse.Controllers
 
             return View(course);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToMyCourses(int courseId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            var course = await _context.Courses.FirstOrDefaultAsync(c => c.Id == courseId);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            var isAlreadyAdded = await _context.UsersCourses
+                .AnyAsync(uc => uc.UserId == user.Id && uc.CourseId == courseId);
+
+            if (!isAlreadyAdded)
+            {
+                _context.UsersCourses.Add(new UserCourse
+                {
+                    UserId = user.Id,
+                    CourseId = courseId
+                });
+
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("Index", "MyCourses");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveFromMyCourses(int courseId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            var userCourse = await _context.UsersCourses
+                .FirstOrDefaultAsync(uc => uc.UserId == user.Id && uc.CourseId == courseId);
+
+            if (userCourse != null)
+            {
+                _context.UsersCourses.Remove(userCourse);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("Index", "MyCourses");
+        }   
     }
 }

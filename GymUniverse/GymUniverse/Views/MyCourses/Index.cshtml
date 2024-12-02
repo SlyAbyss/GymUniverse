@@ -1,1 +1,31 @@
-﻿<h2>My Courses</h2>
+﻿@model List<GymUniverse.Models.Course>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses</title>
+</head>
+<body>
+    <h1>My Courses</h1>
+    @if (Model != null && Model.Any())
+    {
+        <div class="courses-grid">
+            @foreach (var course in Model)
+            {
+                <div class="course-item">
+                    <h2>@course.Name</h2>
+                    <p>@course.Description</p>
+                    <p><strong>Price:</strong> $@course.Price</p>
+                    <p><strong>Scheduled on:</strong> @course.Schedule.ToString("dd-MMMM - [HH:mm]")</p>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>No courses added yet. Browse available courses to add some!</p>
+    }
+</body>
+</html>

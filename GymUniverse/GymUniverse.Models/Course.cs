@@ -33,5 +33,7 @@ namespace GymUniverse.Models
 
         [ForeignKey("TrainerId")]
         public Trainer Trainer { get; set; } = null!;
+
+        public ICollection<UserCourse> UserCourses { get; set; }
     }
 }

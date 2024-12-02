@@ -32,6 +32,10 @@ namespace GymUniverse.Data
 
         public DbSet<RoomEquipment> RoomsEquipments { get; set; }
 
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
+        public DbSet<UserCourse> UsersCourses { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
@@ -44,7 +48,7 @@ namespace GymUniverse.Data
             builder.ApplyConfiguration<IdentityRole>(roles);
 
             var user = new SeedUser();
-            builder.ApplyConfiguration<IdentityUser>(user);
+            builder.ApplyConfiguration<ApplicationUser>(user);
 
             var admin = new SeedAdmin();
             builder.ApplyConfiguration<IdentityUserRole<string>>(admin);
@@ -63,6 +67,19 @@ namespace GymUniverse.Data
                 .HasOne(re => re.Equipment)
                 .WithMany(e => e.RoomEquipments)
                 .HasForeignKey(re => re.EquipmentId);
+
+            builder.Entity<UserCourse>()
+                .HasKey(uc => new { uc.UserId, uc.CourseId });
+
+            builder.Entity<UserCourse>()
+                .HasOne(uc => uc.User)
+                .WithMany(u => u.UserCourses)
+                .HasForeignKey(uc => uc.UserId);
+
+            builder.Entity<UserCourse>()
+                .HasOne(uc => uc.Course)
+                .WithMany(c => c.UserCourses)
+                .HasForeignKey(uc => uc.CourseId);
         }
     }
 
@@ -79,21 +96,21 @@ namespace GymUniverse.Data
         }
     }
 
-    public class SeedUser : IEntityTypeConfiguration<IdentityUser>
+    public class SeedUser : IEntityTypeConfiguration<ApplicationUser>
     {
-        private readonly IPasswordHasher<IdentityUser?> _passwordHasher = new PasswordHasher<IdentityUser?>();
+        private readonly IPasswordHasher<ApplicationUser?> _passwordHasher = new PasswordHasher<ApplicationUser?>();
 
-        public void Configure(EntityTypeBuilder<IdentityUser> builder)
+        public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
             builder
-                .HasData(new IdentityUser
+                .HasData(new ApplicationUser
                 {
                     Id = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
-                    UserName = "admin",
-                    NormalizedUserName = "ADMIN",
+                    UserName = "gymadmin",
+                    NormalizedUserName = "GYMADMIN",
                     Email = "gymadmin@gymuniverse.com",
                     NormalizedEmail = "GYMADMIN@GYMUNIVERSE.COM",
-                    PasswordHash = _passwordHasher.HashPassword(null, "gym12345"),
+                    PasswordHash = _passwordHasher.HashPassword(null, "gymadmin12345"),
                     SecurityStamp = "SecurityStampTest01"
                 });
         }
