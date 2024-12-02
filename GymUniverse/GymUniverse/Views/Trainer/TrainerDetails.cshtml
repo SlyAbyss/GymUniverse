@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@Model.Name - Trainer Details</title>
     <style>
+
         body {
             font-family: 'Arial', sans-serif;
             margin-bottom: 150px;
@@ -60,7 +61,7 @@
 
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); /* 2 cards per row */
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
@@ -121,7 +122,7 @@
 
         .this {
             background-color: #d17cff;
-            color: #fff;
+            color: #fff !important;
             padding: 10px 20px;
             font-size: 1em;
             border: none;
@@ -190,15 +191,13 @@
                         <div class="course-buttons">
                             @if (User.Identity.IsAuthenticated)
                             {
+                                if(){
+                                    
+                                }
                                 <form method="post" asp-controller="Course" asp-action="AddToMyCourses">
-                                    <input type="hidden" name="courseId" value="@Model.Id" />
-                                    <button type="submit" class="btn btn-primary">Add to My Courses</button>
-                                </form>
-
-                                <form method="post" asp-controller="Course" asp-action="RemoveFromMyCourses">
-                                    <input type="hidden" name="courseId" value="@Model.Id" />
-                                    <button type="submit" class="btn btn-danger">Remove from My Courses</button>
-                                </form>
+                                        <input type="hidden" name="courseId" value="@course.Id" />
+                                        <button type="submit" class="btn this">Sign up</button>
+                                    </form>                              
                             }
                             @if (User.IsInRole("Administrator"))
                             {

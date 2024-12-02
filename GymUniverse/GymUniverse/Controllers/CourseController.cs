@@ -40,6 +40,7 @@ namespace GymUniverse.Controllers
         public async Task<IActionResult> CreateCourse(Course course)
         {
             ModelState.Remove(nameof(course.Trainer));
+            ModelState.Remove(nameof(course.UserCourses));
             if (ModelState.IsValid)
             {
                 _context.Courses.Add(course);
