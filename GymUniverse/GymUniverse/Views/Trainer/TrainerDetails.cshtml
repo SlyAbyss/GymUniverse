@@ -191,9 +191,6 @@
                         <div class="course-buttons">
                             @if (User.Identity.IsAuthenticated)
                             {
-                                if(){
-                                    
-                                }
                                 <form method="post" asp-controller="Course" asp-action="AddToMyCourses">
                                         <input type="hidden" name="courseId" value="@course.Id" />
                                         <button type="submit" class="btn this">Sign up</button>

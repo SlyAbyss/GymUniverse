@@ -22,6 +22,37 @@ namespace GymUniverse.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("GymUniverse.Models.ContactMessage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("SubmittedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactMessages");
+                });
+
             modelBuilder.Entity("GymUniverse.Models.Course", b =>
                 {
                     b.Property<int>("Id")
@@ -455,13 +486,13 @@ namespace GymUniverse.Data.Migrations
                         {
                             Id = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "aa3e41be-9906-431f-b2b5-92ec34e00756",
+                            ConcurrencyStamp = "8b897000-ad23-471f-832e-5a41f60b15b0",
                             Email = "gymadmin@gymuniverse.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "GYMADMIN@GYMUNIVERSE.COM",
                             NormalizedUserName = "GYMADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEC0rdj6ysQ3Ku0Zl8hBrysZtXHkPnjKEcHAFQ3WGLPCC7sGl8OI7Uj2Ln7s9ibuTkQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC8zEfs2ybDBd91pYiB3mcwKlbGpMsUrb50NFFOBy7u1BqpIUCvMp6/k9kiaqZ5nyw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "SecurityStampTest01",
                             TwoFactorEnabled = false,

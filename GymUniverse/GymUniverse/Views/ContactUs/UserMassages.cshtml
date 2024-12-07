@@ -1,0 +1,81 @@
+﻿@model List<GymUniverse.Models.ContactMessage>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Messages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+            .message h3 {
+                margin: 0;
+                font-size: 1.2em;
+                color: #0073e6;
+            }
+
+            .message p {
+                margin: 5px 0;
+                font-size: 1em;
+            }
+
+        .no-messages {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Messages</h1>
+
+        @if (ViewBag.NoMessages == true)
+        {
+            <div class="no-messages">
+                <p>No messages have been received yet.</p>
+            </div>
+        }
+        else
+        {
+            foreach (var message in Model)
+            {
+                <div class="message">
+                    <h3>From: @message.Name</h3>
+                    <p><strong>Email:</strong> @message.Email</p>
+                    <p><strong>Message:</strong></p>
+                    <p>@message.Message</p>
+                    <p><small><em>Submitted at: @message.SubmittedAt.ToString("f")</em></small></p>
+                    <form method="post" asp-controller="ContactUs" asp-action="DeleteMessage">
+                        <input type="hidden" name="messageId" value="@message.Id" />
+                        <button type="submit" class="btn">Delete</button>
+                    </form>
+                </div>
+            }
+        }
+    </div>
+</body>
+</html>

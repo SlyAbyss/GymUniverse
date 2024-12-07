@@ -9,10 +9,8 @@
   <ItemGroup>
     <None Include="Views\Equipment\CreateEquipment.cshtml" />
     <None Include="Views\Home\AboutUs.cshtml" />
-    <None Include="Views\Home\Careers.cshtml" />
-    <None Include="Views\Home\ContactUs.cshtml" />
+    <None Include="Views\ContactUs\Index.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Home\Prices.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Location\CreateLocation.cshtml" />
     <None Include="Views\Location\Index.cshtml" />

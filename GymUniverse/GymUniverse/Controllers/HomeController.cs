@@ -18,7 +18,6 @@ namespace GymUniverse.Controllers
 
         public IActionResult Index()
         {
-            ErrorViewModel model = new ErrorViewModel();
             return View();
         }
 
@@ -28,21 +27,6 @@ namespace GymUniverse.Controllers
         }
 
         public IActionResult AboutUs()
-        {
-            return View();
-        }
-
-        public IActionResult Careers()
-        {
-            return View();
-        }
-
-        public IActionResult Prices()
-        {
-            return View();
-        }
-
-        public IActionResult ContactUs()
         {
             return View();
         }

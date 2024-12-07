@@ -36,6 +36,8 @@ namespace GymUniverse.Data
 
         public DbSet<UserCourse> UsersCourses { get; set; }
 
+        public DbSet<ContactMessage> ContactMessages { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder

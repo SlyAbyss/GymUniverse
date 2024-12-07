@@ -69,5 +69,17 @@ namespace GymUniverse.Constants
 
         //Constant for the date format
         public const string DateFormat = "dd-MM H:mm";
+
+        //Constant for the Name in the user message
+        public const int ContactMessageNameMinLength = 3;
+        public const int ContactMessageNameMaxLength = 50;
+
+        //Constant for the Email in the user message
+        public const int ContactMessageEmailMinLength = 3;
+        public const int ContactMessageEmailMaxLength = 100;
+        
+        //Constant for the Message in the user message
+        public const int ContactMessageMessageMinLength = 3;
+        public const int ContactMessageMessageMaxLength = 500;
     }
 }
