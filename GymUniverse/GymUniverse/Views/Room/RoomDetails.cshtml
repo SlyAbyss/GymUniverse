@@ -92,8 +92,8 @@
             color: #dcdcdc;
         }
 
-        .btn-warning {
-            width:20%;
+        .this {
+            width: 20%;
             margin-top: 25px;
             background-color: #d17cff !important;
             color: #fff !important;
@@ -102,8 +102,24 @@
             border-radius: 5px;
         }
 
-            .btn-warning:hover {
+            .this:hover {
                 background-color: #85309c !important;
+            }
+
+        .this-danger {
+            font-size: 1em !important;
+            width: 20%;
+            margin-top: 25px;
+            background-color: #e53935 !important;
+            color: #fff !important;
+            border: none !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+            .this-danger:hover {
+                background-color: #ad0006 !important;
+                color: #fff !important;
             }
 
         hr {
@@ -150,7 +166,7 @@
                         {
                             <img src="~/images/EquipmentPH.png" alt="@roomEquipment.Equipment.Name" />
                         }
-                        
+
                         <div class="equipment-name">@roomEquipment.Equipment.Name</div>
                         <div class="equipment-description">@roomEquipment.Equipment.Description</div>
                     </div>
@@ -166,7 +182,12 @@
     <div>
         @if (User.IsInRole("Administrator"))
         {
-            <a asp-controller="Room" asp-action="AddEquipment" asp-route-roomId="@Model.Id" class="btn btn-warning">Edit Equipment</a>
+            <a asp-controller="Room" asp-action="AddEquipment" asp-route-roomId="@Model.Id" class="btn this">Edit Equipment</a>
+            <a asp-controller="Room" asp-action="EditRoom" asp-route-id="@Model.Id" class="btn this">Edit Room</a>
+
+            <form asp-controller="Room" asp-action="DeleteRoom" asp-route-id="@Model.Id" method="post" style="display:inline;">
+                <button type="submit" class="btn this-danger" onclick="return confirm('Are you sure you want to delete this Room?')">Delete Room</button>
+            </form>
         }
     </div>
 </body>

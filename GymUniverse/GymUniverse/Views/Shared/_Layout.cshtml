@@ -43,15 +43,18 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         @if (User!.IsInRole("User"))
-                        {                         
-                        <li><a asp-area="" asp-controller="MyCourses" asp-action="index">My Courses</a></li>
+                        {
+                            <li><a asp-area="" asp-controller="MyCourses" asp-action="index">My Courses</a></li>
                         }
                         @if (User!.IsInRole("Administrator"))
                         {
                             <li><a asp-area="" asp-controller="ContactUs" asp-action="UserMassages">User Messages</a></li>
                         }
                         <li><a asp-area="" asp-controller="Location" asp-action="Index">Locations</a></li>
-                        <li><a asp-area="" asp-controller="ContactUs" asp-action="Index">Contact Us</a></li>
+                        @if (!User!.IsInRole("Administrator"))
+                        {
+                            <li><a asp-area="" asp-controller="ContactUs" asp-action="Index">Contact Us</a></li>
+                        }
                         <li><a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
                     </ul>

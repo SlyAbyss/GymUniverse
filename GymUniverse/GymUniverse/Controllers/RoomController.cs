@@ -4,6 +4,7 @@ using GymUniverse.Models;
 using Microsoft.EntityFrameworkCore;
 using GymUniverse.ViewModels.EquipmentViewModels;
 using Microsoft.AspNetCore.Authorization;
+using GymUniverse.ViewModels.RoomViewModels;
 
 namespace GymUniverse.Controllers
 {
@@ -86,6 +87,7 @@ namespace GymUniverse.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> AddEquipment(int RoomId, int EquipmentId)
         {
             var room = await _context.Rooms.Include(r => r.RoomsEquipments).FirstOrDefaultAsync(r => r.Id == RoomId);
@@ -110,6 +112,7 @@ namespace GymUniverse.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> RemoveEquipment(int RoomId, int EquipmentId)
         {
             var roomEquipment = _context.RoomsEquipments
@@ -122,6 +125,77 @@ namespace GymUniverse.Controllers
             }
 
             return RedirectToAction("AddEquipment", new { roomId = RoomId });
+        }
+
+        // Edit Room - GET
+        [HttpGet]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> EditRoom(int id)
+        {
+
+            var room = await _context.Rooms.FindAsync(id);
+            if (room == null)
+            {
+                return NotFound();
+            }
+
+            RoomEditViewModel roomView = new RoomEditViewModel()
+            {
+               Id = id,
+               Name = room.Name,
+               Description = room.Description,
+               ImageUrl = room.ImageUrl,
+            };
+
+            return View(roomView);
+        }
+
+        // Edit Room - POST
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> EditRoom(RoomEditViewModel room)
+        {
+            var roomToEdit = await _context.Rooms.FindAsync(room.Id);
+
+            if (roomToEdit == null)
+            {
+                return NotFound();
+            }
+
+            roomToEdit.Name = room.Name;
+            roomToEdit.Description = room.Description;
+            roomToEdit.ImageUrl = room.ImageUrl;
+
+            if (ModelState.IsValid)
+            {
+                 _context.Update(roomToEdit);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("RoomDetails", new { id = room.Id });
+            }
+
+            return View(room);
+        }
+
+        // Delete Room
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> DeleteRoom(int id)
+        {
+            var room = await _context.Rooms
+                .Include(r => r.RoomsEquipments)
+                .FirstOrDefaultAsync(r => r.Id == id);
+
+            if (room == null)
+            {
+                return NotFound();
+            }
+
+            // Remove related equipment associations
+            _context.RoomsEquipments.RemoveRange(room.RoomsEquipments);
+            _context.Rooms.Remove(room);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("LocationDetails", "Location", new { id = room.LocationId });
         }
     }
 }
