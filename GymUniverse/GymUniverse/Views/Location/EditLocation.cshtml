@@ -1,0 +1,100 @@
+﻿@model GymUniverse.Models.Location
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Location</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: url('/images/Galaxy-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px 50px;
+            text-align: center;
+            border-radius: 25px;
+            background: rgba(25, 0, 150, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            font-size: 2.4em;
+            margin-bottom: 20px;
+            color: #e39ff6;
+            text-align: center;
+            text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #e39ff6;
+            text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+            margin: 15px 0 5px 0;
+            display: inline-block;
+        }
+
+        textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        .this {
+            background-color: #d17cff !important;
+            color: #fff !important;
+            border: none !important;
+            width: 30%;
+        }
+
+            .this:hover {
+                background-color: #85309c !important;
+                color: #fff !important;
+            }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        footer .container {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Location Details</h1>
+    <form asp-action="EditLocation" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label for="Name">Edit - Location Name</label>
+            <input asp-for="Name" class="form-control" autocomplete="off" placeholder="Enter the Location name" />
+        </div>
+        <div class="form-group">
+            <label for="Address">Edit - Address</label>
+            <input asp-for="Address" class="form-control" autocomplete="off" placeholder="Enter the Location Address" />
+        </div>
+        <div class="form-group">
+            <label for="ImageUrl">Edit - Image URL</label>
+            <input asp-for="ImageUrl" class="form-control" autocomplete="off" placeholder="Paste the image URL here (optional)" />
+        </div>
+        <div class="form-group">
+            <label for="Description">Edit - Description</label>
+            <textarea asp-for="Description" class="form-control" rows="5" placeholder="Provide a brief description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary this">Save Changes</button>
+    </form>
+</body>
+</html>

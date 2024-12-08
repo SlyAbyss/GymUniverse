@@ -52,6 +52,7 @@ namespace GymUniverse.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> AddToMyCourses(int courseId)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -84,6 +85,7 @@ namespace GymUniverse.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> RemoveFromMyCourses(int courseId)
         {
             var user = await _userManager.GetUserAsync(User);

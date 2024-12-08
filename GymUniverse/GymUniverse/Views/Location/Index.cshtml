@@ -56,6 +56,7 @@
             }
 
         .card {
+            padding: 15px;
             background: rgba(25, 0, 50, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
@@ -87,17 +88,34 @@
             text-shadow: 0 0 10px #ff6bff;
         }
 
-        .btn-warning {
+        .this {
+            width: 100%;
             background-color: #d17cff !important;
             color: #fff !important;
             border: none !important;
             padding: 5px 10px;
             border-radius: 5px;
-            font-size: 0.9em;
+            margin-bottom: 10px;
         }
 
-            .btn-warning:hover {
+            .this:hover {
                 background-color: #85309c !important;
+                color: #fff !important;
+            }
+
+        .this-remove {
+            width: 100%;
+            font-size: 1em !important;
+            background-color: #e53935 !important;
+            color: #fff !important;
+            border: none !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+            .this-remove:hover {
+                background-color: #ad0006 !important;
+                color: #fff !important;
             }
 
         .row {
@@ -143,14 +161,16 @@
                 </div>
                 <div class="row gx-0">
                     <div class="col-6 px-1">
-                        <a asp-controller="Location" asp-action="LocationDetails" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100">Details</a>
+                        <a asp-controller="Location" asp-action="LocationDetails" asp-route-id="@location.Id" class="btn this">Details</a>
+                        @if (User!.IsInRole("Administrator"))
+                        {
+                            <a asp-controller="Location" asp-action="EditLocation" asp-route-id="@location.Id" class="btn this">Edit</a>
+                            <form asp-controller="Location" asp-action="Delete" method="post">
+                                <input type="hidden" name="id" value="@location.Id" />
+                                <button type="submit" class="btn this-remove">Delete</button>
+                            </form>
+                        }
                     </div>
-                    @if (User!.IsInRole("Administrator"))
-                    {
-                        <div class="col-6 px-1">
-                            <a asp-controller="Location" asp-action="Delete" asp-route-id="@location.Id" class="btn btn-warning btn-sm mb-2 w-100">Delete</a>
-                        </div>
-                    }
                 </div>
             </div>
         }

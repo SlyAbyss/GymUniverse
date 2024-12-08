@@ -24,7 +24,6 @@ namespace GymUniverse.Controllers
         }
 
         // Action to display form for creating a new location
-
         [HttpGet]
         [Authorize(Roles = "Administrator")]
         public IActionResult CreateLocation()
@@ -34,6 +33,7 @@ namespace GymUniverse.Controllers
 
         // Action to handle form submission for creating a new location
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> CreateLocation(Location location)
         {
             if (ModelState.IsValid)
@@ -60,6 +60,77 @@ namespace GymUniverse.Controllers
             }
 
             return View(location);
+        }
+
+        // Action to delete a location permanently from the database
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var location = await _context.Locations.FindAsync(id);
+
+            if (location == null)
+            {
+                return NotFound(); // Location not found
+            }
+
+            _context.Locations.Remove(location);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        // Action to display form for editing a location
+        [HttpGet]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> EditLocation(int id)
+        {
+            var location = await _context.Locations.FindAsync(id);
+            if (location == null)
+            {
+                return NotFound();
+            }
+
+            return View(location);
+        }
+
+        // Action to handle form submission for editing a location
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> EditLocation(int id, Location location)
+        {
+            if (id != location.Id)
+            {
+                return BadRequest(); // IDs do not match
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Locations.Update(location);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!await LocationExists(location.Id))
+                    {
+                        return NotFound(); // Location no longer exists
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+            }
+
+            return View(location);
+        }
+
+        private async Task<bool> LocationExists(int id)
+        {
+            return await _context.Locations.AnyAsync(e => e.Id == id);
         }
     }
 }
