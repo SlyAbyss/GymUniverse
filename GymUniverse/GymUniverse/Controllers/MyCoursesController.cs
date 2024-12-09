@@ -32,6 +32,15 @@ namespace GymUniverse.Controllers
                 .Select(uc => uc.Course)
                 .ToListAsync();
 
+
+            foreach (var course in courses)
+            {
+                var trainer = await _context.Trainers.FirstOrDefaultAsync(t => t.Id == course.TrainerId);
+                var location = await _context.Locations.FirstOrDefaultAsync(l => l.Id == trainer.LocationId);
+                trainer.Location = location;
+                course.Trainer = trainer;             
+            }
+
             return View(courses);
         }
     }

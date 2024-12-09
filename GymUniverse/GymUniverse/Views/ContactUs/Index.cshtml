@@ -1,6 +1,12 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+    @inject UserManager<ApplicationUser> UserManager
+@{
     ViewData["Title"] = "Contact Us";
+    var username = User.Identity.Name;
+    var user = await UserManager.FindByNameAsync(username);
+    var email = user?.Email;
 }
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +41,7 @@
             backdrop-filter: blur(3px);
         }
 
-        h1{
+        h1 {
             color: #e39ff6;
             text-shadow: 0 0 10px #ff6bff, 0 0 30px #d17cff;
             text-align: center;
@@ -101,27 +107,28 @@
             box-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
             border-top: 3px solid #ff6bff;
         }
-    
+
         footer .container {
             padding: 0px;
         }
 
-        .footer{
+        .footer {
             position: relative !important;
         }
     </style>
 </head>
 <body>
-        @if (ViewBag.Error != null)
-        {
-            <p class="error">@ViewBag.Error</p>
-        }
-        else if (ViewBag.Success != null)
-        {
-            <p class="success">@ViewBag.Success</p>
-        }
+    @if (ViewBag.Error != null)
+    {
+        <p class="error">@ViewBag.Error</p>
+    }
+    else if (ViewBag.Success != null)
+    {
+        <p class="success">@ViewBag.Success</p>
+    }
 
-        <h1>Contact Us</h1>
+
+    <h1>Contact Us</h1>
     <hr />
     <div class="info-section">
         <h2>Our Details</h2>
@@ -129,14 +136,14 @@
         <p><strong>Email:</strong> support@gymuniverse.com</p>
         <p><strong>Address:</strong> 493 Fitness Avenue, Workout City, Fitland</p>
     </div>
-        <hr />
+    <hr />
     <h1>Send Us a Message</h1>
     <form method="post" asp-action="Submit">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="Name" autocomplete="off" placeholder="Your Name" required />
+        <input type="text" id="name" name="Name" autocomplete="off" value="@ViewBag.Username" placeholder=" Your Name" required />
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="Email" autocomplete="off" value="@ViewBag.UserEmail" placeholder="Your Email" required />
+        <input type="email" id="email" name="Email" autocomplete="off" value="@email" placeholder="Your Email" required />
 
         <label for="message">Your Message:</label>
         <textarea id="message" rows="5" name="Message" placeholder="Your Message" required></textarea>

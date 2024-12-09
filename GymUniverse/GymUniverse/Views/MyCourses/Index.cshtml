@@ -65,23 +65,16 @@
                 box-shadow: 0 0 25px rgba(255, 107, 255, 0.7);
             }
 
-        .course-name {
-            font-size: 2em;
+        h2 {
             color: #e39ff6;
             margin-bottom: 15px;
             text-shadow: 0 0 10px #ff6bff, 0 0 30px #d17cff;
         }
 
-        .course-description {
-            font-size: 1.2em;
-            color: #dcdcdc;
-            margin-bottom: 15px;
-        }
-
         .course-info {
-            font-size: 1em;
             color: #dcdcdc;
             margin-bottom: 20px;
+            text-align: left;
         }
 
         .this-remove {
@@ -101,6 +94,11 @@
             margin-top: 50px;
         }
 
+        hr {
+            box-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+            border-top: 3px solid #ff6bff;
+        }
+
         footer .container {
             padding: 0px;
         }
@@ -115,16 +113,20 @@
             @foreach (var course in Model)
             {
                 <div class="course-item">
-                    <div class="course-name">@course.Name</div>
-                    <div class="course-description">@course.Description</div>
+                    <h2>@course.Name</h2>
+                    <hr />
                     <div class="course-info">
+                        <p><strong>Location:</strong> @course.Trainer.Location.Name</p>
+                        <p><strong>Adress:</strong> @course.Trainer.Location.Address</p>
+                        <p><strong>Trainer:</strong> @course.Trainer.Name</p>
+                        <p><strong>Description:</strong> @course.Description</p>
                         <p><strong>Price:</strong> $@course.Price</p>
                         <p><strong>Scheduled on:</strong> @course.Schedule.ToString("dd-MMMM - [HH:mm]")</p>
                     </div>
 
                     <form method="post" asp-controller="Course" asp-action="RemoveFromMyCourses">
                         <input type="hidden" name="courseId" value="@course.Id" />
-                        <button type="submit" class="btn this-remove">Remove Course</button>
+                        <button type="submit" class="btn this-remove" onclick="return confirm('Are you sure you want to remove @course.Name from your courses?')">Remove Course</button>
                     </form>
                 </div>
             }

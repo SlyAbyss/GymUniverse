@@ -1,6 +1,7 @@
 ﻿using GymUniverse.Data;
 using GymUniverse.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +19,7 @@ namespace GymUniverse.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.UserEmail = User.Identity.IsAuthenticated ? User.Identity.Name : string.Empty;
+            ViewBag.Username = User.Identity.IsAuthenticated ? User.Identity.Name : string.Empty;
             return View(new ContactMessage());
         }
 
@@ -49,14 +50,14 @@ namespace GymUniverse.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteMessage(int messageId)
         {
-            var message = await _context.ContactMessages.FindAsync(messageId); // Fetch the message from the database
+            var message = await _context.ContactMessages.FindAsync(messageId);
             if (message != null)
             {
-                _context.ContactMessages.Remove(message); // Remove the message
-                await _context.SaveChangesAsync(); // Save changes to the database
+                _context.ContactMessages.Remove(message);
+                await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction(nameof(UserMassages)); // Redirect back to the messages view
+            return RedirectToAction(nameof(UserMassages));
         }
     }
 }

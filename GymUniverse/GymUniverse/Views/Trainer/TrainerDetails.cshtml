@@ -121,7 +121,6 @@
         }
 
         .this {
-            width: 20%;
             margin-top: 25px;
             background-color: #d17cff !important;
             color: #fff !important;
@@ -132,11 +131,11 @@
 
             .this:hover {
                 background-color: #85309c !important;
+                color: #fff !important;
             }
 
         .this-delete {
             font-size: 1em !important;
-            width: 20%;
             margin-top: 25px;
             background-color: #e53935 !important;
             color: #fff !important;
@@ -203,7 +202,10 @@
                             }
                             @if (User.IsInRole("Administrator"))
                             {
-                                <a asp-controller="Course" asp-action="Delete" asp-route-courseId="@course.Id" class="btn this this-delete">Delete</a>
+                                <form asp-controller="Course"  asp-action="DeleteCourse" method="post">
+                                    <input type="hidden" name="id" value="@course.Id" />
+                                    <button type="submit" class="btn this-delete" style="width: 100%" onclick="return confirm('Are you sure you want to delete the course @course.Name')">Delete</button>
+                                </form>
                             }
                         </div>
                     </div>

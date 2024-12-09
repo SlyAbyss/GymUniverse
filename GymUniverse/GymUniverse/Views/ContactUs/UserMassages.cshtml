@@ -131,7 +131,7 @@
                     <p>@message.Message</p>
                     <form method="post" asp-controller="ContactUs" asp-action="DeleteMessage">
                         <input type="hidden" name="messageId" value="@message.Id" />
-                        <button type="submit" class="btn-danger">Delete</button>
+                        <button type="submit" class="btn-danger" onclick="return confirm('Are you sure you want to delete the message from @message.Name')">Delete</button>
                     </form>
                 </div>
             }

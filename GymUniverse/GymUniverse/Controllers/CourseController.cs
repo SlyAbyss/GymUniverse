@@ -104,6 +104,28 @@ namespace GymUniverse.Controllers
             }
 
             return RedirectToAction("Index", "MyCourses");
-        }   
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> DeleteCourse(int id)
+        {
+            var course = await _context.Courses
+                .Include(c => c.UserCourses)
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            _context.UsersCourses.RemoveRange(course.UserCourses);
+
+            _context.Courses.Remove(course);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("TrainerDetails", "Trainer", new { id = course.TrainerId });
+        }
     }
 }
