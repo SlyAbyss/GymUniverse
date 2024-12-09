@@ -106,7 +106,7 @@
                 background-color: #85309c !important;
             }
 
-        .this-danger {
+        .this-delete {
             font-size: 1em !important;
             width: 20%;
             margin-top: 25px;
@@ -117,7 +117,7 @@
             border-radius: 5px;
         }
 
-            .this-danger:hover {
+            .this-delete:hover {
                 background-color: #ad0006 !important;
                 color: #fff !important;
             }
@@ -186,7 +186,7 @@
             <a asp-controller="Room" asp-action="EditRoom" asp-route-id="@Model.Id" class="btn this">Edit Room</a>
 
             <form asp-controller="Room" asp-action="DeleteRoom" asp-route-id="@Model.Id" method="post" style="display:inline;">
-                <button type="submit" class="btn this-danger" onclick="return confirm('Are you sure you want to delete this Room?')">Delete Room</button>
+                <button type="submit" class="btn this-delete" onclick="return confirm('Are you sure you want to delete this Room?')">Delete Room</button>
             </form>
         }
     </div>

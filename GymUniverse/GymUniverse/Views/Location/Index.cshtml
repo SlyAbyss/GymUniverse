@@ -167,7 +167,7 @@
                             <a asp-controller="Location" asp-action="EditLocation" asp-route-id="@location.Id" class="btn this">Edit</a>
                             <form asp-controller="Location" asp-action="Delete" method="post">
                                 <input type="hidden" name="id" value="@location.Id" />
-                                <button type="submit" class="btn this-remove" onclick="return confirm('Are you sure you want to delete this Location?')">Delete</button>
+                                <button type="submit" class="btn this-remove" onclick="return confirm('Are you sure you want to delete @location.Name?')">Delete</button>
                             </form>
                         }
                     </div>

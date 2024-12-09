@@ -121,27 +121,32 @@
         }
 
         .this {
-            background-color: #d17cff;
+            width: 20%;
+            margin-top: 25px;
+            background-color: #d17cff !important;
             color: #fff !important;
+            border: none !important;
             padding: 10px 20px;
-            font-size: 1em;
-            border: none;
             border-radius: 5px;
-            cursor: pointer;
         }
 
             .this:hover {
-                background-color: #85309c;
-                color: #fff !important;
+                background-color: #85309c !important;
             }
 
         .this-delete {
-            background-color: #e53935;
+            font-size: 1em !important;
+            width: 20%;
+            margin-top: 25px;
+            background-color: #e53935 !important;
             color: #fff !important;
+            border: none !important;
+            padding: 10px 20px;
+            border-radius: 5px;
         }
 
             .this-delete:hover {
-                background-color: #ad0006;
+                background-color: #ad0006 !important;
                 color: #fff !important;
             }
 
@@ -192,9 +197,9 @@
                             @if (User.IsInRole("User"))
                             {
                                 <form method="post" asp-controller="Course" asp-action="AddToMyCourses">
-                                        <input type="hidden" name="courseId" value="@course.Id" />
-                                        <button type="submit" class="btn this">Sign up</button>
-                                    </form>                              
+                                    <input type="hidden" name="courseId" value="@course.Id" />
+                                    <button type="submit" class="btn this">Sign up</button>
+                                </form>
                             }
                             @if (User.IsInRole("Administrator"))
                             {
@@ -214,7 +219,12 @@
     <div>
         @if (User.IsInRole("Administrator"))
         {
-            <a asp-controller="Course" asp-action="CreateCourse" asp-route-trainerId="@Model.Id" class="this btn btn-warning" style="margin-top:50px;">Add a Course</a>
+            <a asp-controller="Course" asp-action="CreateCourse" asp-route-trainerId="@Model.Id" class="btn this">Add a Course</a>
+            <a asp-controller="Trainer" asp-action="EditTrainer" asp-route-id="@Model.Id" class="btn this">Edit Trainer</a>
+
+            <form asp-controller="Trainer" asp-action="DeleteTrainer" asp-route-id="@Model.Id" method="post" style="display:inline;">
+                <button type="submit" class="btn this-delete" onclick="return confirm('Are you sure you want to delete @Model.Name?')">Delete Trainer</button>
+            </form>
         }
     </div>
 </body>

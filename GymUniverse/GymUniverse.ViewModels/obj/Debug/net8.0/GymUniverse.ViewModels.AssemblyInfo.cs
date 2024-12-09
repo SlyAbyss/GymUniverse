@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GymUniverse.ViewModels")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26ed08aad281fac723567f15784fbab00bc04dd0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bfb3a954393a36d995578d022f0c62c9538ad5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("GymUniverse.ViewModels")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GymUniverse.ViewModels")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
