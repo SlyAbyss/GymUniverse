@@ -73,8 +73,7 @@
                 border-radius: 15px;
             }
 
-        .equipment-name {
-            font-size: 1.2em;
+        h4 {
             font-weight: bold;
             color: #e39ff6;
             text-shadow: 0 0 10px #ff6bff;
@@ -98,7 +97,7 @@
             background-color: #009925 !important;
             color: #fff !important;
             border: none !important;
-            width: 30%;
+            width: 100%;
         }
 
             .this-add:hover {
@@ -110,7 +109,7 @@
             background-color: #e53935 !important;
             color: #fff !important;
             border: none !important;
-            width: 40%;
+            width: 100%;
         }
 
             .this-remove:hover {
@@ -123,6 +122,11 @@
             justify-content: center;
             gap: 20px;
             margin-top: 30px;
+        }
+
+        hr {
+            box-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+            border-top: 3px solid #ff6bff;
         }
 
         footer .container {
@@ -150,14 +154,14 @@
                         <img src="~/images/EquipmentPH.png" alt="@equipment.Name" />
                     }
                 </div>
-                <div class="equipment-name">@equipment.Name</div>
-
+                <h4>@equipment.Name</h4>
+                <hr />
                 @if (Model.SelectedEquipment.Contains(equipment.Id))
                 {
                     <form asp-action="RemoveEquipment" method="post">
                         <input type="hidden" name="RoomId" value="@Model.RoomId" />
                         <input type="hidden" name="EquipmentId" value="@equipment.Id" />
-                        <button type="submit" class="btn this-remove">Remove</button>
+                        <button type="submit" class="btn this-remove">Remove from Room</button>
                     </form>
                 }
                 else
@@ -165,9 +169,16 @@
                     <form asp-action="AddEquipment" method="post">
                         <input type="hidden" name="RoomId" value="@Model.RoomId" />
                         <input type="hidden" name="EquipmentId" value="@equipment.Id" />
-                        <button type="submit" class="this-add btn">Add</button>
+                        <button type="submit" class="this-add btn">Add to Room</button>
                     </form>
                 }
+
+                <form asp-controller="Equipment"  asp-action="DeleteEquipment" method="post">
+                    <input type="hidden" name="id" value="@equipment.Id" />
+                    <input type="hidden" name="roomId" value="@Model.RoomId" />
+                    <button type="submit" class="btn this-remove" style="margin-top: 10px" onclick="return confirm('Are you sure you want to delete @equipment.Name?')">Delete Equipment</button>
+                </form>
+
             </div>
         }
     </div>

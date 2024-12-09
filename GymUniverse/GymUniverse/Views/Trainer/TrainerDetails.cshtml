@@ -203,7 +203,7 @@
                             }
                             @if (User.IsInRole("Administrator"))
                             {
-                                <a asp-action="Delete" asp-route-courseId="@course.Id" class="btn this this-delete">Delete</a>
+                                <a asp-controller="Course" asp-action="Delete" asp-route-courseId="@course.Id" class="btn this this-delete">Delete</a>
                             }
                         </div>
                     </div>

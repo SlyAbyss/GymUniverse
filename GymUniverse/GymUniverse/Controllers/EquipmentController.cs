@@ -37,10 +37,29 @@ namespace GymUniverse.Controllers
             {
                 _context.Equipment.Add(viewModel.Equipment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("AddEquipment", "Room", new {roomId = viewModel.RoomId });
+                return RedirectToAction("AddEquipment", "Room", new { roomId = viewModel.RoomId });
             }
             return View(viewModel.Equipment);
         }
-    }
 
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> DeleteEquipment(int id, int? roomId = null)
+        {
+            var equipment = await _context.Equipment.FindAsync(id);
+            if (equipment == null)
+            {
+                return NotFound("Equipment not found.");
+            }
+
+            _context.Equipment.Remove(equipment);
+            await _context.SaveChangesAsync();
+
+            if (roomId.HasValue)
+            {
+                return RedirectToAction("AddEquipment", "Room", new { roomId = roomId.Value });
+            }
+            return RedirectToAction("Index");
+        }
+    }
 }
