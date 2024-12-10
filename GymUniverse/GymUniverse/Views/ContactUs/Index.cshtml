@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
     @inject UserManager<ApplicationUser> UserManager
+@Html.AntiForgeryToken()
 @{
     ViewData["Title"] = "Contact Us";
     var username = User.Identity.Name;

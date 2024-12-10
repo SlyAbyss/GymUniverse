@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "500 - Internal Server Error";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - GymUniverse</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: url('/images/Galaxy-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px 100px;
+            text-align: center;
+            border-radius: 25px;
+            background: rgba(25, 0, 150, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: #e39ff6;
+            text-shadow: 0 0 20px #ff6bff, 0 0 40px #d17cff;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #dcdcdc;
+            margin: 25px 0px;
+        }
+
+        strong {
+            color: #ff88ff;
+        }
+
+        footer .container {
+            padding: 0px;
+        }
+
+        h4 {
+            margin-top: 100px;
+            color: #e39ff6;
+            text-shadow: 0 0 10px #ff6bff, 0 0 40px #d17cff;
+        }
+
+        .back-home {
+            background-color: #d17cff !important;
+            padding: 10px 30px;
+            color: #fff !important;
+            font-size: 1.2em;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+            .back-home:hover {
+                background-color: #85309c !important;
+                color: #fff !important;
+            }
+    </style>
+</head>
+<body>
+    <h1>Oops! Something Went Wrong</h1>
+    <h2>500 - Internal Server Error</h2>
+
+    <p>
+        It seems that something went wrong on our end. Don't worry! We're already working to fix it.
+        At <strong>GymUniverse</strong>, we're committed to providing you with the best experience, and we apologize for the inconvenience.
+    </p>
+
+    <h4>
+        <b>We'll be back in action soon! In the meantime, feel free to return to the homepage.</b>
+    </h4>
+
+    <a href="/" class="back-home">Back to Home</a>
+</body>
+</html>
