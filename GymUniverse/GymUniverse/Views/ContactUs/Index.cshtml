@@ -1,11 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Identity
+    @model GymUniverse.Models.ContactMessage
     @inject UserManager<ApplicationUser> UserManager
 @Html.AntiForgeryToken()
+
 @{
     ViewData["Title"] = "Contact Us";
-    var username = User.Identity.Name;
-    var user = await UserManager.FindByNameAsync(username);
-    var email = user?.Email;
 }
 
 
@@ -128,7 +127,6 @@
         <p class="success">@ViewBag.Success</p>
     }
 
-
     <h1>Contact Us</h1>
     <hr />
     <div class="info-section">
@@ -140,16 +138,27 @@
     <hr />
     <h1>Send Us a Message</h1>
     <form method="post" asp-action="Submit">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="Name" autocomplete="off" value="@ViewBag.Username" placeholder=" Your Name" required />
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" autocomplete="off" value="@if(User.Identity.IsAuthenticated){@ViewBag.Username}" placeholder="Your Name" required />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="Email" autocomplete="off" value="@email" placeholder="Your Email" required />
+        <div class="form-group">
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" class="form-control" autocomplete="off" value="@if(User.Identity.IsAuthenticated){var user = await UserManager.FindByNameAsync(User.Identity.Name);var email = user?.Email;@email}"
+                   placeholder="Your Email" required />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
 
-        <label for="message">Your Message:</label>
-        <textarea id="message" rows="5" name="Message" placeholder="Your Message" required></textarea>
+        <div class="form-group">
+            <label asp-for="Message">Your Message</label>
+            <textarea asp-for="Message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            <span asp-validation-for="Message" class="text-danger"></span>
+        </div>
 
         <button type="submit" class="this btn">Send Message</button>
     </form>
+
 </body>
 </html>

@@ -183,7 +183,7 @@
     <div>
         @if (User.IsInRole("Administrator"))
         {
-            <a asp-controller="Equipment" asp-action="AddEquipment" asp-route-roomId="@Model.Id" class="btn this">Edit Equipment</a>
+            <a asp-controller="Equipment" asp-action="AddEquipment" asp-route-roomId="@Model.Id" class="btn this">Edit Room Equipment</a>
             <a asp-controller="Room" asp-action="EditRoom" asp-route-id="@Model.Id" class="btn this">Edit Room</a>
 
             <form asp-controller="Room" asp-action="DeleteRoom" asp-route-id="@Model.Id" method="post" style="display:inline;">

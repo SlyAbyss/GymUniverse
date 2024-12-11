@@ -23,6 +23,7 @@ namespace GymUniverse.Models
         [Required]
         [StringLength(ContactMessageMessageMaxLength, MinimumLength = ContactMessageMessageMinLength)]
         public string Message { get; set; }
+
         public DateTime SubmittedAt { get; set; }
     }
 }

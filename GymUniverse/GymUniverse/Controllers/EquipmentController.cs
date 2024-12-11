@@ -41,7 +41,7 @@ namespace GymUniverse.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("AddEquipment", "Equipment", new { roomId = viewModel.RoomId });
             }
-            return View(viewModel.Equipment);
+            return View(viewModel);
         }
 
         [HttpPost]
