@@ -59,6 +59,20 @@ namespace GymUniverse.Data
             var locations = new SeedLocations();
             builder.ApplyConfiguration<Location>(locations);
 
+            var rooms = new SeedRooms();
+            builder.ApplyConfiguration<Room>(rooms);
+            
+            var trainers = new SeedTrainers();
+            builder.ApplyConfiguration<Trainer>(trainers);
+
+            var courses = new SeedCourses();
+            builder.ApplyConfiguration<Course>(courses);
+            
+            var equipment = new SeedEquipment();
+            builder.ApplyConfiguration<Equipment>(equipment);
+            
+            var equipmentRoom = new SeedEqupmentRoomRelation();
+            builder.ApplyConfiguration<RoomEquipment>(equipmentRoom);
 
             base.OnModelCreating(builder);
 

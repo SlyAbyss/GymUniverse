@@ -16,12 +16,12 @@ namespace GymUniverse.Models
         public string Name { get; set; } = string.Empty;
 
         [Required]
-        [StringLength(LocationDescriptionMaxLength, MinimumLength = LocationDescriptionMinLength)]
-        public string Description { get; set; } = string.Empty;
-
-        [Required]
         [StringLength(LocationAddressMaxLength, MinimumLength = LocationAddressMinLength)]
         public string Address { get; set; } = string.Empty;
+
+        [Required]
+        [StringLength(LocationDescriptionMaxLength, MinimumLength = LocationDescriptionMinLength)]
+        public string Description { get; set; } = string.Empty;
 
         [StringLength(UrlMaxLength, MinimumLength = UrlMinLength)]
         public string? ImageUrl { get; set; }

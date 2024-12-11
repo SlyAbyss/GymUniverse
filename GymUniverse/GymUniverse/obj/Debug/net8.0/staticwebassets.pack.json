@@ -13,12 +13,108 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\AlexSteele.png",
+      "PackagePath": "staticwebassets\\images\\AlexSteele.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\BOSUBall.png",
+      "PackagePath": "staticwebassets\\images\\BOSUBall.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\BalanceBoard.png",
+      "PackagePath": "staticwebassets\\images\\BalanceBoard.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\BalanceandCoreZone.png",
+      "PackagePath": "staticwebassets\\images\\BalanceandCoreZone.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\Barbell.png",
+      "PackagePath": "staticwebassets\\images\\Barbell.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\BattleRopes.png",
+      "PackagePath": "staticwebassets\\images\\BattleRopes.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\BeachfrontYogaSpace.png",
+      "PackagePath": "staticwebassets\\images\\BeachfrontYogaSpace.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\BenchPress.png",
+      "PackagePath": "staticwebassets\\images\\BenchPress.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\CardioDeck.png",
+      "PackagePath": "staticwebassets\\images\\CardioDeck.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\CardioStudio.png",
+      "PackagePath": "staticwebassets\\images\\CardioStudio.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\ClimbingRope.png",
+      "PackagePath": "staticwebassets\\images\\ClimbingRope.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\Dumbbell.png",
+      "PackagePath": "staticwebassets\\images\\Dumbbell.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\ElijahColeman.png",
+      "PackagePath": "staticwebassets\\images\\ElijahColeman.png"
+    },
+    {
       "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\EquipmentPH.png",
       "PackagePath": "staticwebassets\\images\\EquipmentPH.png"
     },
     {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\EvelynHart.png",
+      "PackagePath": "staticwebassets\\images\\EvelynHart.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\FitFusion.png",
+      "PackagePath": "staticwebassets\\images\\FitFusion.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\FunctionalTrainingSpace.png",
+      "PackagePath": "staticwebassets\\images\\FunctionalTrainingSpace.png"
+    },
+    {
       "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\Galaxy-background.jpg",
       "PackagePath": "staticwebassets\\images\\Galaxy-background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\HIITTrainingArena.png",
+      "PackagePath": "staticwebassets\\images\\HIITTrainingArena.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\HeavyLiftingZone.png",
+      "PackagePath": "staticwebassets\\images\\HeavyLiftingZone.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\HeavyMetalFitness.png",
+      "PackagePath": "staticwebassets\\images\\HeavyMetalFitness.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\IsabellaBennett.png",
+      "PackagePath": "staticwebassets\\images\\IsabellaBennett.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\JakePower.png",
+      "PackagePath": "staticwebassets\\images\\JakePower.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\KaraHayes.png",
+      "PackagePath": "staticwebassets\\images\\KaraHayes.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\Kettlebell.png",
+      "PackagePath": "staticwebassets\\images\\Kettlebell.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\LiamSpeed.png",
+      "PackagePath": "staticwebassets\\images\\LiamSpeed.png"
     },
     {
       "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\LocationPH.png",
@@ -29,12 +125,120 @@
       "PackagePath": "staticwebassets\\images\\Logo.png"
     },
     {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\MedicineBall.png",
+      "PackagePath": "staticwebassets\\images\\MedicineBall.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\MeditationRoom.png",
+      "PackagePath": "staticwebassets\\images\\MeditationRoom.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\NathanReed.png",
+      "PackagePath": "staticwebassets\\images\\NathanReed.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\OutdoorTrainingZone.png",
+      "PackagePath": "staticwebassets\\images\\OutdoorTrainingZone.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\PilatesStudio.png",
+      "PackagePath": "staticwebassets\\images\\PilatesStudio.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\PrivateTrainingSuite.png",
+      "PackagePath": "staticwebassets\\images\\PrivateTrainingSuite.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\PunchingBag.png",
+      "PackagePath": "staticwebassets\\images\\PunchingBag.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\ResistanceBands.png",
+      "PackagePath": "staticwebassets\\images\\ResistanceBands.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\ResistanceMachine.png",
+      "PackagePath": "staticwebassets\\images\\ResistanceMachine.png"
+    },
+    {
       "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\RoomPH.png",
       "PackagePath": "staticwebassets\\images\\RoomPH.png"
     },
     {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\RowingMachine.png",
+      "PackagePath": "staticwebassets\\images\\RowingMachine.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\RyanVega.png",
+      "PackagePath": "staticwebassets\\images\\RyanVega.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\SamuelBrooks.png",
+      "PackagePath": "staticwebassets\\images\\SamuelBrooks.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\SophiaMyers.png",
+      "PackagePath": "staticwebassets\\images\\SophiaMyers.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\SouthBeachFitness.png",
+      "PackagePath": "staticwebassets\\images\\SouthBeachFitness.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\SpinBike.png",
+      "PackagePath": "staticwebassets\\images\\SpinBike.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\SpinStudio.png",
+      "PackagePath": "staticwebassets\\images\\SpinStudio.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\StrengthTrainingHub.png",
+      "PackagePath": "staticwebassets\\images\\StrengthTrainingHub.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\TRX.png",
+      "PackagePath": "staticwebassets\\images\\TRX.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\ThePeakFitnessCenter.png",
+      "PackagePath": "staticwebassets\\images\\ThePeakFitnessCenter.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\TinaLee.png",
+      "PackagePath": "staticwebassets\\images\\TinaLee.png"
+    },
+    {
       "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\TrainerPH.png",
       "PackagePath": "staticwebassets\\images\\TrainerPH.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\Treadmill.png",
+      "PackagePath": "staticwebassets\\images\\Treadmill.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\UrbanFitGym.png",
+      "PackagePath": "staticwebassets\\images\\UrbanFitGym.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\VictorKane.png",
+      "PackagePath": "staticwebassets\\images\\VictorKane.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\YogaMat.png",
+      "PackagePath": "staticwebassets\\images\\YogaMat.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\ZaraQuinn.png",
+      "PackagePath": "staticwebassets\\images\\ZaraQuinn.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\ZenFitWellness.png",
+      "PackagePath": "staticwebassets\\images\\ZenFitWellness.png"
+    },
+    {
+      "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\images\\ZumbaStudio.png",
+      "PackagePath": "staticwebassets\\images\\ZumbaStudio.png"
     },
     {
       "Id": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse\\wwwroot\\js\\site.js",

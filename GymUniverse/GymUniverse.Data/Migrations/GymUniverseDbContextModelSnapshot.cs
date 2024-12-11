@@ -85,6 +85,206 @@ namespace GymUniverse.Data.Migrations
                     b.HasIndex("TrainerId");
 
                     b.ToTable("Courses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Improve your stamina and running technique with Liam Speed’s endurance running session.",
+                            Name = "Endurance Running",
+                            Price = 50,
+                            Schedule = new DateTime(2024, 2, 3, 9, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 6
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Intense speed training for athletes looking to improve their pace with Liam Speed.",
+                            Name = "Speed Training Bootcamp",
+                            Price = 60,
+                            Schedule = new DateTime(2024, 2, 5, 16, 45, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 6
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Develop full-body strength for functional movements with Victor Kane.",
+                            Name = "Functional Strength Conditioning",
+                            Price = 55,
+                            Schedule = new DateTime(2024, 2, 7, 12, 15, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 7
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Unleash your creativity with Zara Quinn’s unique bodyweight workouts.",
+                            Name = "Creative Bodyweight Workout",
+                            Price = 45,
+                            Schedule = new DateTime(2024, 2, 10, 11, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 8
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Gentle and calming yoga designed to restore your energy with Isabella Bennett.",
+                            Name = "Restorative Yoga Flow",
+                            Price = 40,
+                            Schedule = new DateTime(2024, 2, 15, 9, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 13
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Focus on mindfulness and meditation in this peaceful yoga class.",
+                            Name = "Mindful Meditation and Yoga",
+                            Price = 45,
+                            Schedule = new DateTime(2024, 2, 18, 17, 45, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 13
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Team-oriented agility drills with Nathan Reed to enhance your speed and coordination.",
+                            Name = "Team Agility Training",
+                            Price = 55,
+                            Schedule = new DateTime(2024, 2, 21, 14, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 12
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Integrate mindfulness into your fitness routine with Elijah Coleman’s unique approach.",
+                            Name = "Fitness Mindfulness",
+                            Price = 50,
+                            Schedule = new DateTime(2024, 2, 25, 16, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 14
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Get started with strength training using techniques taught by Jake Power.",
+                            Name = "Strength Training for Beginners",
+                            Price = 40,
+                            Schedule = new DateTime(2024, 2, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "Learn the basics of powerlifting with Jake Power, focusing on technique and form.",
+                            Name = "Powerlifting Fundamentals",
+                            Price = 55,
+                            Schedule = new DateTime(2024, 2, 8, 18, 10, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "Take your strength training to the next level with Alex Steele’s advanced program.",
+                            Name = "Advanced Strength Training",
+                            Price = 70,
+                            Schedule = new DateTime(2024, 2, 4, 7, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Description = "Master the powerlifting lifts under the guidance of Alex Steele.",
+                            Name = "Powerlifting Mastery",
+                            Price = 65,
+                            Schedule = new DateTime(2024, 2, 6, 13, 15, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Description = "One-on-one personalized strength training sessions with Tina Lee.",
+                            Name = "Personalized Strength Training",
+                            Price = 75,
+                            Schedule = new DateTime(2024, 2, 9, 8, 45, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 3
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Description = "Strength training sessions with Tina Lee inspired by planetary forces.",
+                            Name = "Planetary Power Strength",
+                            Price = 60,
+                            Schedule = new DateTime(2024, 2, 11, 16, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 3
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Description = "A solid foundation for cardio enthusiasts with Ryan Vega.",
+                            Name = "Cardio Endurance Basics",
+                            Price = 45,
+                            Schedule = new DateTime(2024, 2, 2, 14, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 4
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Description = "Push your limits with Sophia Myers’ high-energy HIIT workout.",
+                            Name = "High-Intensity Interval Training (HIIT)",
+                            Price = 50,
+                            Schedule = new DateTime(2024, 2, 7, 16, 15, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 5
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Description = "Focus on relaxation, stretching, and mindful breathing to calm the mind and body.",
+                            Name = "Gentle Yoga Flow",
+                            Price = 40,
+                            Schedule = new DateTime(2024, 2, 14, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 9
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Description = "This course blends yoga and meditation to help you achieve balance, mindfulness, and inner peace.",
+                            Name = "Yoga for Inner Peace",
+                            Price = 45,
+                            Schedule = new DateTime(2024, 2, 21, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 9
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Description = "Focus on mindfulness and restorative yoga, perfect for improving overall well-being and finding mental clarity.",
+                            Name = "Mindfulness Meditation and Yoga",
+                            Price = 50,
+                            Schedule = new DateTime(2024, 2, 12, 19, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 10
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Description = "A yoga class focusing on holistic health, combining movement, breathwork, and mindfulness to rejuvenate the body and mind.",
+                            Name = "Holistic Health Yoga",
+                            Price = 55,
+                            Schedule = new DateTime(2024, 2, 19, 18, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 10
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Description = "Develop speed, agility, and coordination with drills designed to improve athletic performance.",
+                            Name = "Speed and Agility Training",
+                            Price = 55,
+                            Schedule = new DateTime(2024, 2, 16, 9, 30, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 11
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Description = "Intensive agility drills aimed at boosting performance in competitive sports.",
+                            Name = "Agility Drills for Athletes",
+                            Price = 60,
+                            Schedule = new DateTime(2024, 2, 23, 16, 20, 0, 0, DateTimeKind.Unspecified),
+                            TrainerId = 11
+                        });
                 });
 
             modelBuilder.Entity("GymUniverse.Models.Equipment", b =>
@@ -112,6 +312,127 @@ namespace GymUniverse.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Equipment");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "For strength training exercises, perfect for building muscle mass and toning.",
+                            ImageUrl = "/images/Dumbbell.png",
+                            Name = "Dumbbell"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "A versatile weight for dynamic strength and conditioning exercises.",
+                            ImageUrl = "/images/Kettlebell.png",
+                            Name = "Kettlebell"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Ideal for chest and upper body strength training exercises.",
+                            ImageUrl = "/images/BenchPress.png",
+                            Name = "Bench Press"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Perfect for cardio workouts, jogging, and walking exercises.",
+                            ImageUrl = "/images/Treadmill.png",
+                            Name = "Treadmill"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "For high-intensity functional training and conditioning.",
+                            ImageUrl = "/images/BattleRopes.png",
+                            Name = "Battle Ropes"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "For explosive strength training, core work, and plyometric exercises.",
+                            ImageUrl = "/images/MedicineBall.png",
+                            Name = "Medicine Ball"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "For indoor cycling workouts focused on endurance and cardiovascular fitness.",
+                            ImageUrl = "/images/SpinBike.png",
+                            Name = "Spin Bike"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "For full-body workouts, improving strength and cardio endurance.",
+                            ImageUrl = "/images/RowingMachine.png",
+                            Name = "Rowing Machine"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "For strength training and flexibility exercises, perfect for a variety of fitness levels.",
+                            ImageUrl = "/images/ResistanceBands.png",
+                            Name = "Resistance Bands"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "Suspension training equipment for strength, balance, flexibility, and core stability.",
+                            ImageUrl = "/images/TRX.png",
+                            Name = "TRX"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "A tool for balance training, stability exercises, and core workouts.",
+                            ImageUrl = "/images/BOSUBall.png",
+                            Name = "BOSU Ball"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Description = "For improving balance and coordination.",
+                            ImageUrl = "/images/BalanceBoard.png",
+                            Name = "Balance Board"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Description = "For strength training and endurance, especially for upper body and core.",
+                            ImageUrl = "/images/ClimbingRope.png",
+                            Name = "Climbing Rope"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Description = "For controlled strength training targeting specific muscle groups.",
+                            ImageUrl = "/images/ResistanceMachine.png",
+                            Name = "Resistance Machine"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Description = "A soft mat for yoga sessions, providing comfort and stability during floor exercises and poses.",
+                            ImageUrl = "/images/YogaMat.png",
+                            Name = "Yoga Mat"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Description = "A heavy metal bar used for weightlifting exercises, perfect for squats, bench presses, and deadlifts.",
+                            ImageUrl = "/images/Barbell.png",
+                            Name = "Barbell"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Description = "A versatile training tool used for functional workouts, strength, and endurance training.",
+                            ImageUrl = "/images/PunchingBag.png",
+                            Name = "Punching Bag"
+                        });
                 });
 
             modelBuilder.Entity("GymUniverse.Models.Location", b =>
@@ -144,6 +465,56 @@ namespace GymUniverse.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Locations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "371 Metal Street, Muscle City",
+                            Description = "A premier gym with top-of-the-line equipment for bodybuilders and athletes. Offering personal training and nutrition counseling.",
+                            ImageUrl = "/images/HeavyMetalFitness.png",
+                            Name = "Heavy Metal Fitness"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "968 Fitness Blvd, Healthtown",
+                            Description = "Fusion of fitness and fun! Join group classes, enjoy strength training, and explore our yoga and cardio sessions.",
+                            ImageUrl = "/images/FitFusion.png",
+                            Name = "FitFusion"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Address = "137 Summit Drive, Peak Valley",
+                            Description = "A luxurious gym offering top-notch services with an exclusive members-only fitness experience. From cardio to weight training, we have it all.",
+                            ImageUrl = "/images/ThePeakFitnessCenter.png",
+                            Name = "The Peak Fitness Center"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Address = "119 Beachfront Ave, Sunny Bay",
+                            Description = "Work out by the beach! Enjoy outdoor workouts with a view of the ocean. Perfect for yoga, pilates, and beach-inspired fitness.",
+                            ImageUrl = "/images/SouthBeachFitness.png",
+                            Name = "South Beach Fitness"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Address = "247 Street Way, City Centre",
+                            Description = "Modern gym with a focus on functional training, cross-fit, and cardio. Open 24/7 to cater to your busy urban lifestyle.",
+                            ImageUrl = "/images/UrbanFitGym.png",
+                            Name = "Urban Fit Gym"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Address = "727 Wellness Lane, Tranquil Park",
+                            Description = "Find your balance at ZenFit! We offer a range of holistic fitness programs including yoga, pilates, and meditation, along with strength training.",
+                            ImageUrl = "/images/ZenFitWellness.png",
+                            Name = "ZenFit Wellness"
+                        });
                 });
 
             modelBuilder.Entity("GymUniverse.Models.Room", b =>
@@ -176,6 +547,120 @@ namespace GymUniverse.Data.Migrations
                     b.HasIndex("LocationId");
 
                     b.ToTable("Rooms");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "A room designed for weightlifting and powerlifting, equipped with squat racks, benches, and Olympic bars.",
+                            ImageUrl = "/images/HeavyLiftingZone.png",
+                            LocationId = 1,
+                            Name = "Heavy Lifting Zone"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Focus on resistance training with dumbbells, kettlebells, and cable machines.",
+                            ImageUrl = "/images/StrengthTrainingHub.png",
+                            LocationId = 1,
+                            Name = "Strength Training Hub"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "A vibrant studio for Zumba classes, complete with a sound system and energetic walls.",
+                            ImageUrl = "/images/ZumbaStudio.png",
+                            LocationId = 2,
+                            Name = "Zumba Studio"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Designed for High-Intensity Interval Training, equipped with battle ropes, boxes, and medicine balls.",
+                            ImageUrl = "/images/HIITTrainingArena.png",
+                            LocationId = 2,
+                            Name = "HIIT Training Arena"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "A dedicated area for spinning classes with stationary bikes and motivational lighting.",
+                            ImageUrl = "/images/SpinStudio.png",
+                            LocationId = 2,
+                            Name = "Spin Studio"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "A luxurious space with treadmills, elliptical machines, and stationary bikes, offering a view of the city skyline.",
+                            ImageUrl = "/images/CardioDeck.png",
+                            LocationId = 3,
+                            Name = "Cardio Deck"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "An exclusive room for one-on-one personal training sessions, equipped with versatile fitness equipment.",
+                            ImageUrl = "/images/PrivateTrainingSuite.png",
+                            LocationId = 3,
+                            Name = "Private Training Suite"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "A serene room for yoga and meditation with large windows showcasing the beach view.",
+                            ImageUrl = "/images/BeachfrontYogaSpace.png",
+                            LocationId = 4,
+                            Name = "Beachfront Yoga Space"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "An outdoor area designed for functional fitness training with fresh air and ocean breeze.",
+                            ImageUrl = "/images/OutdoorTrainingZone.png",
+                            LocationId = 4,
+                            Name = "Outdoor Training Zone"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "A dynamic area for cross-fit and functional workouts, including TRX, kettlebells, and climbing ropes.",
+                            ImageUrl = "/images/FunctionalTrainingSpace.png",
+                            LocationId = 5,
+                            Name = "Functional Training Space"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "A space for cardio workouts with treadmills, bikes, and rowing machines in an urban-inspired setting.",
+                            ImageUrl = "/images/CardioStudio.png",
+                            LocationId = 5,
+                            Name = "Cardio Studio"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Description = "A tranquil space for guided meditation and mindfulness practice, with ambient lighting and relaxing music.",
+                            ImageUrl = "/images/MeditationRoom.png",
+                            LocationId = 6,
+                            Name = "Meditation Room"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Description = "A room for pilates sessions, equipped with reformers, mats, and resistance bands.",
+                            ImageUrl = "/images/PilatesStudio.png",
+                            LocationId = 6,
+                            Name = "Pilates Studio"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Description = "A space dedicated to improving balance and core strength, featuring BOSU balls, balance boards, and stability equipment.",
+                            ImageUrl = "/images/BalanceandCoreZone.png",
+                            LocationId = 6,
+                            Name = "Balance and Core Zone"
+                        });
                 });
 
             modelBuilder.Entity("GymUniverse.Models.RoomEquipment", b =>
@@ -191,6 +676,143 @@ namespace GymUniverse.Data.Migrations
                     b.HasIndex("EquipmentId");
 
                     b.ToTable("RoomsEquipments");
+
+                    b.HasData(
+                        new
+                        {
+                            RoomId = 2,
+                            EquipmentId = 1
+                        },
+                        new
+                        {
+                            RoomId = 10,
+                            EquipmentId = 1
+                        },
+                        new
+                        {
+                            RoomId = 2,
+                            EquipmentId = 2
+                        },
+                        new
+                        {
+                            RoomId = 10,
+                            EquipmentId = 2
+                        },
+                        new
+                        {
+                            RoomId = 4,
+                            EquipmentId = 2
+                        },
+                        new
+                        {
+                            RoomId = 1,
+                            EquipmentId = 3
+                        },
+                        new
+                        {
+                            RoomId = 6,
+                            EquipmentId = 4
+                        },
+                        new
+                        {
+                            RoomId = 11,
+                            EquipmentId = 4
+                        },
+                        new
+                        {
+                            RoomId = 4,
+                            EquipmentId = 5
+                        },
+                        new
+                        {
+                            RoomId = 4,
+                            EquipmentId = 6
+                        },
+                        new
+                        {
+                            RoomId = 5,
+                            EquipmentId = 7
+                        },
+                        new
+                        {
+                            RoomId = 11,
+                            EquipmentId = 8
+                        },
+                        new
+                        {
+                            RoomId = 13,
+                            EquipmentId = 9
+                        },
+                        new
+                        {
+                            RoomId = 12,
+                            EquipmentId = 9
+                        },
+                        new
+                        {
+                            RoomId = 10,
+                            EquipmentId = 10
+                        },
+                        new
+                        {
+                            RoomId = 14,
+                            EquipmentId = 11
+                        },
+                        new
+                        {
+                            RoomId = 14,
+                            EquipmentId = 12
+                        },
+                        new
+                        {
+                            RoomId = 10,
+                            EquipmentId = 13
+                        },
+                        new
+                        {
+                            RoomId = 2,
+                            EquipmentId = 14
+                        },
+                        new
+                        {
+                            RoomId = 8,
+                            EquipmentId = 15
+                        },
+                        new
+                        {
+                            RoomId = 12,
+                            EquipmentId = 15
+                        },
+                        new
+                        {
+                            RoomId = 13,
+                            EquipmentId = 15
+                        },
+                        new
+                        {
+                            RoomId = 1,
+                            EquipmentId = 16
+                        },
+                        new
+                        {
+                            RoomId = 2,
+                            EquipmentId = 16
+                        },
+                        new
+                        {
+                            RoomId = 4,
+                            EquipmentId = 17
+                        },
+                        new
+                        {
+                            RoomId = 10,
+                            EquipmentId = 17
+                        },
+                        new
+                        {
+                            RoomId = 13,
+                            EquipmentId = 17
+                        });
                 });
 
             modelBuilder.Entity("GymUniverse.Models.Trainer", b =>
@@ -226,6 +848,134 @@ namespace GymUniverse.Data.Migrations
                     b.HasIndex("LocationId");
 
                     b.ToTable("Trainers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Age = 35,
+                            Bio = "Certified weightlifting coach specializing in strength training and powerlifting techniques.",
+                            ImageUrl = "/images/JakePower.png",
+                            LocationId = 1,
+                            Name = "Jake Power"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Age = 34,
+                            Bio = "A seasoned weightlifting coach with a passion for cosmic-level strength and power.",
+                            ImageUrl = "/images/AlexSteele.png",
+                            LocationId = 1,
+                            Name = "Alex Steele"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Age = 29,
+                            Bio = "Specializes in strength training and personalized fitness plans, inspired by planetary forces.",
+                            ImageUrl = "/images/TinaLee.png",
+                            LocationId = 1,
+                            Name = "Tina Lee"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Age = 30,
+                            Bio = "Cardio fitness expert with innovative techniques for endurance and speed.",
+                            ImageUrl = "/images/RyanVega.png",
+                            LocationId = 2,
+                            Name = "Ryan Vega"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Age = 25,
+                            Bio = "Energetic instructor focusing on high-intensity interval training.",
+                            ImageUrl = "/images/SophiaMyers.png",
+                            LocationId = 2,
+                            Name = "Sophia Myers"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Age = 28,
+                            Bio = "Endurance athlete and expert in treadmill and bike-based cardio programs.",
+                            ImageUrl = "/images/LiamSpeed.png",
+                            LocationId = 3,
+                            Name = "Liam Speed"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Age = 40,
+                            Bio = "Functional training specialist helping clients achieve balance and strength.",
+                            ImageUrl = "/images/VictorKane.png",
+                            LocationId = 3,
+                            Name = "Victor Kane"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Age = 28,
+                            Bio = "Creative trainer focusing on dynamic functional workouts.",
+                            ImageUrl = "/images/ZaraQuinn.png",
+                            LocationId = 3,
+                            Name = "Zara Quinn"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Age = 32,
+                            Bio = "Certified yoga instructor with a focus on mindfulness and inner peace.",
+                            ImageUrl = "/images/EvelynHart.png",
+                            LocationId = 4,
+                            Name = "Evelyn Hart"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Age = 35,
+                            Bio = "Expert in yoga and wellness, dedicated to holistic health.",
+                            ImageUrl = "/images/SamuelBrooks.png",
+                            LocationId = 4,
+                            Name = "Samuel Brooks"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Age = 30,
+                            Bio = "Multi-sport coach specializing in agility and competitive training.",
+                            ImageUrl = "/images/KaraHayes.png",
+                            LocationId = 5,
+                            Name = "Kara Hayes"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Age = 33,
+                            Bio = "Performance coach dedicated to team dynamics and sports excellence.",
+                            ImageUrl = "/images/NathanReed.png",
+                            LocationId = 5,
+                            Name = "Nathan Reed"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Age = 27,
+                            Bio = "Wellness coach focusing on restorative practices and meditation.",
+                            ImageUrl = "/images/IsabellaBennett.png",
+                            LocationId = 6,
+                            Name = "Isabella Bennett"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Age = 38,
+                            Bio = "Experienced trainer integrating mindfulness into fitness routines.",
+                            ImageUrl = "/images/ElijahColeman.png",
+                            LocationId = 6,
+                            Name = "Elijah Coleman"
+                        });
                 });
 
             modelBuilder.Entity("GymUniverse.Models.UserCourse", b =>
@@ -486,13 +1236,13 @@ namespace GymUniverse.Data.Migrations
                         {
                             Id = "b04c7301-c0c6-4a05-a8ba-8bec078cb212",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8b897000-ad23-471f-832e-5a41f60b15b0",
+                            ConcurrencyStamp = "25e10dd3-759f-4bad-aba7-f13234f1c174",
                             Email = "gymadmin@gymuniverse.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "GYMADMIN@GYMUNIVERSE.COM",
                             NormalizedUserName = "GYMADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEC8zEfs2ybDBd91pYiB3mcwKlbGpMsUrb50NFFOBy7u1BqpIUCvMp6/k9kiaqZ5nyw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBgyN5SC5sZXUzTgNILx1TKI4EwKpiEdYrDQdVzR3UqpEOf7A7uPKJBE57++jEHRwQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "SecurityStampTest01",
                             TwoFactorEnabled = false,
