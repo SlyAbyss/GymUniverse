@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GymUniverse.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class MyCoursesController : Controller
     {
         private readonly GymUniverseDbContext _context;
@@ -38,7 +39,7 @@ namespace GymUniverse.Controllers
                 var trainer = await _context.Trainers.FirstOrDefaultAsync(t => t.Id == course.TrainerId);
                 var location = await _context.Locations.FirstOrDefaultAsync(l => l.Id == trainer.LocationId);
                 trainer.Location = location;
-                course.Trainer = trainer;             
+                course.Trainer = trainer;
             }
 
             return View(courses);

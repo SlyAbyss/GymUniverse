@@ -8,6 +8,7 @@ using GymUniverse.ViewModels.RoomViewModels;
 
 namespace GymUniverse.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class RoomController : Controller
     {
         private readonly GymUniverseDbContext _context;
@@ -127,7 +128,6 @@ namespace GymUniverse.Controllers
             return RedirectToAction("AddEquipment", new { roomId = RoomId });
         }
 
-        // Edit Room - GET
         [HttpGet]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> EditRoom(int id)
@@ -150,7 +150,6 @@ namespace GymUniverse.Controllers
             return View(roomView);
         }
 
-        // Edit Room - POST
         [HttpPost]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> EditRoom(RoomEditViewModel room)
@@ -176,7 +175,6 @@ namespace GymUniverse.Controllers
             return View(room);
         }
 
-        // Delete Room
         [HttpPost]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteRoom(int id)
@@ -190,7 +188,6 @@ namespace GymUniverse.Controllers
                 return NotFound();
             }
 
-            // Remove related equipment associations
             _context.RoomsEquipments.RemoveRange(room.RoomsEquipments);
             _context.Rooms.Remove(room);
             await _context.SaveChangesAsync();

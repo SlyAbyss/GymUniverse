@@ -2,6 +2,7 @@
 using GymUniverse.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -16,7 +17,6 @@ namespace GymUniverse.Data
 {
     public class GymUniverseDbContext : IdentityDbContext
     {
-
         public GymUniverseDbContext(DbContextOptions<GymUniverseDbContext> options)
              : base(options) { }
 

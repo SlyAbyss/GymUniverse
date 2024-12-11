@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GymUniverse.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class TrainerController : Controller
     {
         private readonly GymUniverseDbContext _context;

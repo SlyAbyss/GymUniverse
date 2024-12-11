@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace GymUniverse.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class EquipmentController : Controller
     {
         private readonly GymUniverseDbContext _context;

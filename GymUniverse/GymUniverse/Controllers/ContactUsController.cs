@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GymUniverse.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class ContactUsController : Controller
     {
         private readonly GymUniverseDbContext _context;

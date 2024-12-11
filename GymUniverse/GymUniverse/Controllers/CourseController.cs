@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace GymUniverse.Controllers
 {
-    [Authorize]
+    [AutoValidateAntiforgeryToken]
     public class CourseController : Controller
     {
         private readonly GymUniverseDbContext _context;

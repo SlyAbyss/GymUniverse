@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GymUniverse.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class LocationController : Controller
     {
         private readonly GymUniverseDbContext _context;
@@ -15,7 +16,6 @@ namespace GymUniverse.Controllers
             _context = context;
         }
 
-        // Action to display all of the registered locations
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -23,7 +23,6 @@ namespace GymUniverse.Controllers
             return View(locations);
         }
 
-        // Action to display form for creating a new location
         [HttpGet]
         [Authorize(Roles = "Administrator")]
         public IActionResult CreateLocation()
@@ -31,7 +30,6 @@ namespace GymUniverse.Controllers
             return View();
         }
 
-        // Action to handle form submission for creating a new location
         [HttpPost]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> CreateLocation(Location location)
@@ -45,7 +43,6 @@ namespace GymUniverse.Controllers
             return View(location);
         }
 
-        // Action to display details of a specific location
         [HttpGet]
         public async Task<IActionResult> LocationDetails(int id)
         {
@@ -56,13 +53,12 @@ namespace GymUniverse.Controllers
 
             if (location == null)
             {
-                return NotFound(); // Returns 404 Not Found
+                return NotFound();
             }
 
             return View(location);
         }
 
-        // Action to delete a location permanently from the database
         [HttpPost]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int id)
@@ -71,7 +67,7 @@ namespace GymUniverse.Controllers
 
             if (location == null)
             {
-                return NotFound(); // Location not found
+                return NotFound();
             }
 
             _context.Locations.Remove(location);
@@ -80,7 +76,6 @@ namespace GymUniverse.Controllers
             return RedirectToAction("Index");
         }
 
-        // Action to display form for editing a location
         [HttpGet]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> EditLocation(int id)
@@ -94,14 +89,13 @@ namespace GymUniverse.Controllers
             return View(location);
         }
 
-        // Action to handle form submission for editing a location
         [HttpPost]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> EditLocation(int id, Location location)
         {
             if (id != location.Id)
             {
-                return BadRequest(); // IDs do not match
+                return BadRequest();
             }
 
             if (ModelState.IsValid)
@@ -116,7 +110,7 @@ namespace GymUniverse.Controllers
                 {
                     if (!await LocationExists(location.Id))
                     {
-                        return NotFound(); // Location no longer exists
+                        return NotFound();
                     }
                     else
                     {
