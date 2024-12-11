@@ -22,26 +22,32 @@ namespace GymUniverse.Controllers
         [Authorize(Roles = "Administrator")]
         public IActionResult CreateEquipment(int roomId)
         {
-            var equipment = new Equipment();
-            var viewModel = new CreateEquipmentViewModel()
+            var model = new CreateEquipmentViewModel()
             {
-                Equipment = equipment,
                 RoomId = roomId
             };
-            return View(viewModel);
+            return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateEquipment(CreateEquipmentViewModel viewModel)
+        public async Task<IActionResult> CreateEquipment(CreateEquipmentViewModel model)
         {
-            ModelState.Remove("Equipment.RoomEquipments");
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Equipment.Add(viewModel.Equipment);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("AddEquipment", "Equipment", new { roomId = viewModel.RoomId });
+                return View(model);
             }
-            return View(viewModel);
+
+            var equipment = new Equipment
+            {
+                Name = model.Name,
+                ImageUrl = model.ImageUrl,
+                Description = model.Description
+            };
+
+            _context.Equipment.Add(equipment);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("AddEquipment", "Equipment", new { roomId = model.RoomId });
         }
 
         [HttpPost]
