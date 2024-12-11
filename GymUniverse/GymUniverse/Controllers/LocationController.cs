@@ -1,5 +1,8 @@
 ﻿using GymUniverse.Data;
 using GymUniverse.Models;
+using GymUniverse.ViewModels.LocationViewModels;
+using GymUniverse.ViewModels.RoomViewModels;
+using GymUniverse.ViewModels.TrainerViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +22,16 @@ namespace GymUniverse.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var locations = await _context.Locations.ToListAsync();
+            var locations = await _context.Locations
+                .Select(l => new LocationViewModel
+                {
+                    Id = l.Id,
+                    Name = l.Name,
+                    Address = l.Address,
+                    ImageUrl = l.ImageUrl
+                })
+                .ToListAsync();
+
             return View(locations);
         }
 
@@ -27,21 +39,32 @@ namespace GymUniverse.Controllers
         [Authorize(Roles = "Administrator")]
         public IActionResult CreateLocation()
         {
-            return View();
+            return View(new CreateLocationViewModel());
         }
 
         [HttpPost]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> CreateLocation(Location location)
+        public async Task<IActionResult> CreateLocation(CreateLocationViewModel model)
         {
             if (ModelState.IsValid)
             {
+                var location = new Location
+                {
+                    Name = model.Name,
+                    Address = model.Address,
+                    ImageUrl = model.ImageUrl,
+                    Description = model.Description
+                };
+
                 _context.Locations.Add(location);
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction("Index");
             }
-            return View(location);
+
+            return View(model);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> LocationDetails(int id)
@@ -56,7 +79,28 @@ namespace GymUniverse.Controllers
                 return NotFound();
             }
 
-            return View(location);
+            var viewModel = new LocationDetailsViewModel
+            {
+                Id = location.Id,
+                Name = location.Name,
+                Address = location.Address,
+                Description = location.Description,
+                ImageUrl = location.ImageUrl,
+                Rooms = location.Rooms.Select(room => new RoomViewModel
+                {
+                    Id = room.Id,
+                    Name = room.Name,
+                    ImageUrl = room.ImageUrl
+                }).ToList(),
+                Trainers = location.Trainers.Select(trainer => new TrainerViewModel
+                {
+                    Id = trainer.Id,
+                    Name = trainer.Name,
+                    ImageUrl = trainer.ImageUrl
+                }).ToList()
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -86,45 +130,42 @@ namespace GymUniverse.Controllers
                 return NotFound();
             }
 
-            return View(location);
+            var model = new EditLocationViewModel
+            {
+                Id = location.Id,
+                Name = location.Name,
+                Address = location.Address,
+                ImageUrl = location.ImageUrl,
+                Description = location.Description
+            };
+
+            return View(model);
         }
 
         [HttpPost]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> EditLocation(int id, Location location)
+        public async Task<IActionResult> EditLocation(EditLocationViewModel model)
         {
-            if (id != location.Id)
-            {
-                return BadRequest();
-            }
-
             if (ModelState.IsValid)
             {
-                try
+                var location = await _context.Locations.FindAsync(model.Id);
+                if (location == null)
                 {
-                    _context.Locations.Update(location);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction("Index");
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!await LocationExists(location.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+
+                location.Name = model.Name;
+                location.Address = model.Address;
+                location.ImageUrl = model.ImageUrl;
+                location.Description = model.Description;
+
+                _context.Locations.Update(location);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index");
             }
 
-            return View(location);
-        }
-
-        private async Task<bool> LocationExists(int id)
-        {
-            return await _context.Locations.AnyAsync(e => e.Id == id);
+            return View(model);
         }
     }
 }

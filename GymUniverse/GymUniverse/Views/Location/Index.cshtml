@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GymUniverse.Models.Location>
+﻿@model IEnumerable<GymUniverse.ViewModels.LocationViewModels.LocationViewModel>
 @Html.AntiForgeryToken()
 
 <!DOCTYPE html>
@@ -138,7 +138,7 @@
     </style>
 </head>
 <body>
-    <h1 style="flex">Our Locations</h1>
+    <h1>Our Locations</h1>
     @if (User!.IsInRole("Administrator"))
     {
         <a asp-action="CreateLocation" class="btn btn-primary">Create Location</a>
