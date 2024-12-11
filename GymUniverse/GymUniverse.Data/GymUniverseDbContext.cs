@@ -1,4 +1,5 @@
 ﻿using GymUniverse.Data.Migrations;
+using GymUniverse.Data.Seeds;
 using GymUniverse.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -55,6 +56,10 @@ namespace GymUniverse.Data
             var admin = new SeedAdmin();
             builder.ApplyConfiguration<IdentityUserRole<string>>(admin);
 
+            var locations = new SeedLocations();
+            builder.ApplyConfiguration<Location>(locations);
+
+
             base.OnModelCreating(builder);
 
             builder.Entity<RoomEquipment>()
@@ -87,7 +92,6 @@ namespace GymUniverse.Data
 
     public class CreateRolesConfiguration : IEntityTypeConfiguration<IdentityRole>
     {
-        // Seed Roles
         public void Configure(EntityTypeBuilder<IdentityRole> builder)
         {
             builder

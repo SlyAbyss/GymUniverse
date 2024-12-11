@@ -22,13 +22,11 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
                 .AddEntityFrameworkStores<GymUniverseDbContext>();
 builder.Services.AddControllersWithViews();
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error/Error");
     app.UseStatusCodePagesWithReExecute("/Error/HandleStatusCode/{0}");
