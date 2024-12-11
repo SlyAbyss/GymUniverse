@@ -1,5 +1,6 @@
 ﻿using GymUniverse.Data;
 using GymUniverse.Models;
+using GymUniverse.ViewModels.ContactUsViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,40 +12,58 @@ namespace GymUniverse.Controllers
     public class ContactUsController : Controller
     {
         private readonly GymUniverseDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public ContactUsController(GymUniverseDbContext context)
+        public ContactUsController(GymUniverseDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            ViewBag.Username = User.Identity.IsAuthenticated ? User.Identity.Name : string.Empty;
-            return View(new ContactMessage());
+            var viewModel = new ContactMessageViewModel
+            {
+                LoggedInUsername = User.Identity.IsAuthenticated ? User.Identity.Name : string.Empty,
+                LoggedInEmail = User.Identity.IsAuthenticated ? (await _userManager.FindByNameAsync(User.Identity.Name))?.Email : string.Empty
+            };
+            return View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Submit(ContactMessage contactMessage)
+        public async Task<IActionResult> Submit(ContactMessageViewModel contactUsViewModel)
         {
             if (ModelState.IsValid)
             {
-                contactMessage.SubmittedAt = DateTime.Now;
+                var contactMessage = new ContactMessage
+                {
+                    Name = contactUsViewModel.Name,
+                    Email = contactUsViewModel.Email,
+                    Message = contactUsViewModel.Message,
+                    SubmittedAt = DateTime.Now
+                };
+
                 _context.ContactMessages.Add(contactMessage);
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Your message has been sent successfully!";
+
                 return RedirectToAction("Index");
             }
 
-            TempData["Error"] = "Please correct the errors and try again.";
-            return View("Index", contactMessage);
+            return View("Index", contactUsViewModel);
         }
 
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> UserMassages()
+        public async Task<IActionResult> UserMessages()
         {
             var messages = await _context.ContactMessages.ToListAsync();
-            return View(messages);
+
+            var viewModel = new UserMessagesViewModel
+            {
+                ContactMessages = messages
+            };
+
+            return View(viewModel);
         }
 
         [Authorize(Roles = "Administrator")]
@@ -58,7 +77,7 @@ namespace GymUniverse.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction(nameof(UserMassages));
+            return RedirectToAction(nameof(UserMessages));
         }
     }
 }

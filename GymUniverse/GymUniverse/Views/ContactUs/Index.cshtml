@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
-    @model GymUniverse.Models.ContactMessage
+    @model GymUniverse.ViewModels.ContactUsViewModels.ContactMessageViewModel
     @inject UserManager<ApplicationUser> UserManager
+
 @Html.AntiForgeryToken()
 
 @{
@@ -117,15 +118,6 @@
     </style>
 </head>
 <body>
-    @if (ViewBag.Error != null)
-    {
-        <p class="error">@ViewBag.Error</p>
-    }
-    else if (ViewBag.Success != null)
-    {
-        <p class="success">@ViewBag.Success</p>
-    }
-
     <h1>Contact Us</h1>
     <hr />
     <div class="info-section">
@@ -139,14 +131,15 @@
     <form method="post" asp-action="Submit">
         <div class="form-group">
             <label asp-for="Name">Name</label>
-            <input asp-for="Name" class="form-control" autocomplete="off" value="@if(User.Identity.IsAuthenticated){@ViewBag.Username}" placeholder="Your Name" required />
+            <input asp-for="Name" class="form-control" autocomplete="off"
+                   value="@Model.LoggedInUsername" placeholder="Your Name" required />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="Email">Email</label>
-            <input asp-for="Email" class="form-control" autocomplete="off" value="@if(User.Identity.IsAuthenticated){var user = await UserManager.FindByNameAsync(User.Identity.Name);var email = user?.Email;@email}"
-                   placeholder="Your Email" required />
+            <input asp-for="Email" class="form-control" autocomplete="off"
+                   value="@Model.LoggedInEmail" placeholder="Your Email" required />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 

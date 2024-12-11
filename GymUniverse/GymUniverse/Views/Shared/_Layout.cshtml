@@ -48,7 +48,7 @@
                         }
                         @if (User!.IsInRole("Administrator"))
                         {
-                            <li><a asp-area="" asp-controller="ContactUs" asp-action="UserMassages">User Messages</a></li>
+                            <li><a asp-area="" asp-controller="ContactUs" asp-action="UserMessages">User Messages</a></li>
                         }
                         <li><a asp-area="" asp-controller="Location" asp-action="Index">Locations</a></li>
                         @if (!User!.IsInRole("Administrator"))
