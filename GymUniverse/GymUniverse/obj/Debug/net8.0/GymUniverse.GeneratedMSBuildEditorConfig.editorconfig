@@ -74,16 +74,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XENyZWF0ZUVxdWlwbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Error/Error404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Error/Error500.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I1MDAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Home/AboutUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Home/Error404.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvcjQwNC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Home/Error500.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvcjUwMC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Home/Index.cshtml]
