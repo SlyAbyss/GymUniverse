@@ -300,8 +300,6 @@ C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniver
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\obj\Debug\net8.0\GymUniverse.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\bin\Debug\net8.0\GymUniverse.Data.dll
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\bin\Debug\net8.0\GymUniverse.Data.pdb
-C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\bin\Debug\net8.0\GymUniverse.Services.dll
-C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\bin\Debug\net8.0\GymUniverse.Services.pdb
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Users\Yajo\Desktop\SoftUni\ASP.NET Advanced\GymUniverse\GymUniverse\GymUniverse\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll

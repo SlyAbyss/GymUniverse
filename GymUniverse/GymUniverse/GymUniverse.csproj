@@ -45,7 +45,6 @@
     <ProjectReference Include="..\GymUniverse.Constants\GymUniverse.Constants.csproj" />
     <ProjectReference Include="..\GymUniverse.Data\GymUniverse.Data.csproj" />
     <ProjectReference Include="..\GymUniverse.Models\GymUniverse.Models.csproj" />
-    <ProjectReference Include="..\GymUniverse.Services\GymUniverse.Services.csproj" />
     <ProjectReference Include="..\GymUniverse.ViewModels\GymUniverse.ViewModels.csproj" />
   </ItemGroup>
 

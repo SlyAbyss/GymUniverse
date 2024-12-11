@@ -11,7 +11,6 @@
           "GymUniverse.Constants": "1.0.0",
           "GymUniverse.Data": "1.0.0",
           "GymUniverse.Models": "1.0.0",
-          "GymUniverse.Services": "1.0.0",
           "GymUniverse.ViewModels": "1.0.0",
           "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": "8.0.11",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.11",
@@ -2439,17 +2438,6 @@
           "GymUniverse.Models.dll": {}
         }
       },
-      "GymUniverse.Services/1.0.0": {
-        "dependencies": {
-          "GymUniverse.Constants": "1.0.0",
-          "GymUniverse.Data": "1.0.0",
-          "GymUniverse.Models": "1.0.0",
-          "GymUniverse.ViewModels": "1.0.0"
-        },
-        "runtime": {
-          "GymUniverse.Services.dll": {}
-        }
-      },
       "GymUniverse.ViewModels/1.0.0": {
         "dependencies": {
           "GymUniverse.Constants": "1.0.0",
@@ -3773,11 +3761,6 @@
       "sha512": ""
     },
     "GymUniverse.Models/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "GymUniverse.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

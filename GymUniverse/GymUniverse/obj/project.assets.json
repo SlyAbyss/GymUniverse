@@ -3340,22 +3340,6 @@
           "bin/placeholder/GymUniverse.Models.dll": {}
         }
       },
-      "GymUniverse.Services/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "GymUniverse.Constants": "1.0.0",
-          "GymUniverse.Data": "1.0.0",
-          "GymUniverse.Models": "1.0.0",
-          "GymUniverse.ViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GymUniverse.Services.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GymUniverse.Services.dll": {}
-        }
-      },
       "GymUniverse.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -8892,11 +8876,6 @@
       "path": "../GymUniverse.Models/GymUniverse.Models.csproj",
       "msbuildProject": "../GymUniverse.Models/GymUniverse.Models.csproj"
     },
-    "GymUniverse.Services/1.0.0": {
-      "type": "project",
-      "path": "../GymUniverse.Services/GymUniverse.Services.csproj",
-      "msbuildProject": "../GymUniverse.Services/GymUniverse.Services.csproj"
-    },
     "GymUniverse.ViewModels/1.0.0": {
       "type": "project",
       "path": "../GymUniverse.ViewModels/GymUniverse.ViewModels.csproj",
@@ -8908,7 +8887,6 @@
       "GymUniverse.Constants >= 1.0.0",
       "GymUniverse.Data >= 1.0.0",
       "GymUniverse.Models >= 1.0.0",
-      "GymUniverse.Services >= 1.0.0",
       "GymUniverse.ViewModels >= 1.0.0",
       "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter >= 8.0.11",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 8.0.11",
@@ -8960,9 +8938,6 @@
             },
             "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.Models\\GymUniverse.Models.csproj": {
               "projectPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.Models\\GymUniverse.Models.csproj"
-            },
-            "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.Services\\GymUniverse.Services.csproj": {
-              "projectPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.Services\\GymUniverse.Services.csproj"
             },
             "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.ViewModels\\GymUniverse.ViewModels.csproj": {
               "projectPath": "C:\\Users\\Yajo\\Desktop\\SoftUni\\ASP.NET Advanced\\GymUniverse\\GymUniverse\\GymUniverse.ViewModels\\GymUniverse.ViewModels.csproj"
