@@ -22,33 +22,43 @@ namespace GymUniverse.Controllers
         [Authorize(Roles = "Administrator")]
         public IActionResult CreateRoom(int locationId)
         {
-            var room = new Room
+            var room = new CreateRoomViewModel
             {
-                LocationId = locationId,
+                LocationId = locationId
             };
 
             return View(room);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateRoom(Room room)
+        public async Task<IActionResult> CreateRoom(CreateRoomViewModel room)
         {
             ViewBag.LocationId = room.LocationId;
-            ModelState.Remove(nameof(room.Location));
-            ModelState.Remove(nameof(room.RoomsEquipments));
+
             if (ModelState.IsValid)
             {
-                _context.Rooms.Add(room);
+                var roomEntity = new Room
+                {
+                    LocationId = room.LocationId,
+                    Name = room.Name,
+                    ImageUrl = room.ImageUrl,
+                    Description = room.Description
+                };
+
+                _context.Rooms.Add(roomEntity);
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction("LocationDetails", "Location", new { id = room.LocationId });
             }
+
             return View(room);
         }
 
+        [HttpGet]
         public async Task<IActionResult> RoomDetails(int id)
         {
             var room = await _context.Rooms
-                .Include(t => t.Location)
+                .Include(r => r.Location)
                 .Include(r => r.RoomsEquipments)
                 .ThenInclude(re => re.Equipment)
                 .FirstOrDefaultAsync(r => r.Id == id);
@@ -58,8 +68,25 @@ namespace GymUniverse.Controllers
                 return NotFound("Room not found.");
             }
 
-            return View(room);
+            var roomDetailsViewModel = new RoomDetailsViewModel
+            {
+                Id = room.Id,
+                Name = room.Name,
+                Description = room.Description,
+                ImageUrl = room.ImageUrl,
+                Location = room.Location,
+                RoomsEquipments = room.RoomsEquipments.Select(re => new RoomEquipmentViewModel
+                {
+                    EquipmentId = re.Equipment.Id,
+                    EquipmentName = re.Equipment.Name,
+                    EquipmentDescription = re.Equipment.Description,
+                    EquipmentImageUrl = re.Equipment.ImageUrl
+                }).ToList()
+            };
+
+            return View(roomDetailsViewModel);
         }
+
 
         [HttpGet]
         [Authorize(Roles = "Administrator")]

@@ -1,4 +1,4 @@
-﻿@model GymUniverse.Models.Room
+﻿@model GymUniverse.ViewModels.RoomViewModels.RoomDetailsViewModel
 @Html.AntiForgeryToken()
 
 <!DOCTYPE html>
@@ -159,17 +159,17 @@
                 @foreach (var roomEquipment in Model.RoomsEquipments)
                 {
                     <div class="equipment-item">
-                        @if (!string.IsNullOrEmpty(roomEquipment.Equipment.ImageUrl))
+                        @if (!string.IsNullOrEmpty(roomEquipment.EquipmentImageUrl))
                         {
-                            <img src="@roomEquipment.Equipment.ImageUrl" alt="@roomEquipment.Equipment.Name" />
+                            <img src="@roomEquipment.EquipmentImageUrl" alt="@roomEquipment.EquipmentName" />
                         }
                         else
                         {
-                            <img src="~/images/EquipmentPH.png" alt="@roomEquipment.Equipment.Name" />
+                            <img src="~/images/EquipmentPH.png" alt="@roomEquipment.EquipmentName" />
                         }
 
-                        <div class="equipment-name">@roomEquipment.Equipment.Name</div>
-                        <div class="equipment-description">@roomEquipment.Equipment.Description</div>
+                        <div class="equipment-name">@roomEquipment.EquipmentName</div>
+                        <div class="equipment-description">@roomEquipment.EquipmentDescription</div>
                     </div>
                 }
             </div>
