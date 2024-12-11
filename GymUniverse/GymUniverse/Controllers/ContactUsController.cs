@@ -32,15 +32,15 @@ namespace GymUniverse.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Submit(ContactMessageViewModel contactUsViewModel)
+        public async Task<IActionResult> Submit(ContactMessageViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var contactMessage = new ContactMessage
                 {
-                    Name = contactUsViewModel.Name,
-                    Email = contactUsViewModel.Email,
-                    Message = contactUsViewModel.Message,
+                    Name = model.Name,
+                    Email = model.Email,
+                    Message = model.Message,
                     SubmittedAt = DateTime.Now
                 };
 
@@ -50,7 +50,7 @@ namespace GymUniverse.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View("Index", contactUsViewModel);
+            return View("Index", model);
         }
 
         [Authorize(Roles = "Administrator")]

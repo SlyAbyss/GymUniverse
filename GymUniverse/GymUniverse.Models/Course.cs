@@ -9,7 +9,6 @@ namespace GymUniverse.Models
     /// </summary>
     public class Course
     {
-
         [Key]
         public int Id { get; set; }
 

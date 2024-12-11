@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using GymUniverse.Models;
 using GymUniverse.Data;
 using Microsoft.AspNetCore.Identity;
+using GymUniverse.ViewModels.CourseViewModels;
 
 namespace GymUniverse.Controllers
 {
@@ -29,27 +30,38 @@ namespace GymUniverse.Controllers
                 return NotFound();
             }
 
-            ViewBag.TrainerName = trainer.Name;
-            ViewBag.TrainerId = trainerId;
+            var viewModel = new CreateCourseViewModel
+            {
+                TrainerId = trainerId,
+            };
 
-            return View();
+            return View(viewModel);
         }
+
 
         [HttpPost]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> CreateCourse(Course course)
+        public async Task<IActionResult> CreateCourse(CreateCourseViewModel model)
         {
-            ModelState.Remove(nameof(course.Trainer));
-            ModelState.Remove(nameof(course.UserCourses));
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Courses.Add(course);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("TrainerDetails", "Trainer", new { id = course.TrainerId });
+                return View(model);
             }
 
-            return View(course);
+            var course = new Course
+            {
+                TrainerId = model.TrainerId,
+                Name = model.Name,
+                Price = model.Price,
+                Schedule = model.Schedule,
+                Description = model.Description
+            };
+
+            _context.Courses.Add(course);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("TrainerDetails", "Trainer", new { id = course.TrainerId });
         }
+
 
         [HttpPost]
         [Authorize(Roles = "User")]
