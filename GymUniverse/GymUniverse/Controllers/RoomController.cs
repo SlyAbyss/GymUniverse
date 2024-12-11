@@ -48,6 +48,7 @@ namespace GymUniverse.Controllers
         public async Task<IActionResult> RoomDetails(int id)
         {
             var room = await _context.Rooms
+                .Include(t => t.Location)
                 .Include(r => r.RoomsEquipments)
                 .ThenInclude(re => re.Equipment)
                 .FirstOrDefaultAsync(r => r.Id == id);

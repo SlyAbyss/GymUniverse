@@ -84,28 +84,33 @@
     </style>
 </head>
 <body>
-        <h1>Create a New Room</h1>
-        <form asp-action="CreateRoom" method="post">
+    <h1>Create a New Room</h1>
+    <form asp-action="CreateRoom" method="post">
         <input type="hidden" asp-for="LocationId" />
-            <div class="form-group">
-                <label asp-for="Name">Room Name</label>
+
+        <div class="form-group">
+            <label asp-for="Name">Room Name</label>
             <input asp-for="Name" class="form-control" placeholder="Enter the Room name" autocomplete="off">
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl">Image URL</label>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ImageUrl">Image URL</label>
             <input asp-for="ImageUrl" class="form-control" placeholder="Paste the image URL here (optional)" autocomplete="off">
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description">Description</label>
-                <textarea asp-for="Description" class="form-control" rows="5" placeholder="Provide a brief description"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+            <textarea asp-for="Description" class="form-control" rows="5" placeholder="Provide a brief description"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
         <button type="submit" class="btn this mt-3">Create Room</button>
-        </form>
-    @section Scripts {
-        <partial name="_ValidationScriptsPartial" />
-    }
+    </form>
 </body>
 </html>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

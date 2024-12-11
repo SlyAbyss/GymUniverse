@@ -89,33 +89,39 @@
     </style>
 </head>
 <body>
-        <h1>Create a New Trainer</h1>
-        <form asp-action="CreateTrainer" method="post">
-            <input type="hidden" asp-for="LocationId" />
-            <div class="form-group">
-                <label asp-for="Name">Trainer Name</label>
-                <input asp-for="Name" class="form-control" placeholder="Enter the trainer's name" autocomplete="off" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Age">Age</label>
-                <input asp-for="Age" class="form-control" type="number" placeholder="Enter the trainer's age" autocomplete="off" />
-                <span asp-validation-for="Age" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl">Image URL</label>
-                <input asp-for="ImageUrl" class="form-control" placeholder="Paste the image URL here (optional)" autocomplete="off" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+    <h1>Create a New Trainer</h1>
+    <form asp-action="CreateTrainer" method="post">
+        <input type="hidden" asp-for="LocationId" />
+
+        <div class="form-group">
+            <label asp-for="Name">Trainer Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Enter the trainer's name" autocomplete="off" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Age">Age</label>
+            <input asp-for="Age" class="form-control" type="number" placeholder="Enter the trainer's age" autocomplete="off" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ImageUrl">Image URL</label>
+            <input asp-for="ImageUrl" class="form-control" placeholder="Paste the image URL here (optional)" autocomplete="off" />
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
             <label asp-for="Bio">Biography</label>
-                <textarea asp-for="Bio" class="form-control" rows="5" placeholder="Provide a brief biography"></textarea>
-                <span asp-validation-for="Bio" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-submit">Create Trainer</button>
-        </form>
-    @section Scripts {
-        <partial name="_ValidationScriptsPartial" />
-    }
+            <textarea asp-for="Bio" class="form-control" rows="5" placeholder="Provide a brief biography"></textarea>
+            <span asp-validation-for="Bio" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-submit">Create Trainer</button>
+    </form>
 </body>
 </html>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -181,6 +181,8 @@
     </div>
 
     <div>
+        <a asp-controller="Location" asp-action="LocationDetails" asp-route-id="@Model.Location.Id" class="btn this">Back to Location</a>
+
         @if (User.IsInRole("Administrator"))
         {
             <a asp-controller="Equipment" asp-action="AddEquipment" asp-route-roomId="@Model.Id" class="btn this">Edit Room Equipment</a>
