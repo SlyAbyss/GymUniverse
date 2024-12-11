@@ -18,6 +18,10 @@ namespace GymUniverse.ViewModels.TrainerViewModels
         [Required]
         [StringLength(TrainerNameMaxLength, MinimumLength = TrainerNameMinLength)]
         public string Name { get; set; } = string.Empty;
+        
+        [Required]
+        [Range(TrainerAgeMinLimit, TrainerAgeMaxLimit)]
+        public int Age { get; set; }
 
         [Required]
         [StringLength(TrainerBioMaxLength, MinimumLength = TrainerBioMinLength)]

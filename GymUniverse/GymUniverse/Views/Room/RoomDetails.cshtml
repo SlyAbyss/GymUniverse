@@ -131,6 +131,11 @@
         footer .container {
             padding: 0px;
         }
+
+        .underline {
+            border-bottom: 3px solid rgba(255, 107, 255, 0.3);
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -147,7 +152,8 @@
 
     <h1>@Model.Name</h1>
     <div class="description">
-        <p><strong>Description:</strong> @Model.Description</p>
+        <h3><strong class="underline">Description</strong></h3>
+        <p>@Model.Description</p>
     </div>
 
     <div class="equipment-list">

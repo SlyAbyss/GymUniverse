@@ -1,4 +1,4 @@
-﻿@model GymUniverse.Models.Trainer
+﻿@model GymUniverse.ViewModels.TrainerViewModels.TrainerDetailsViewModel
 @Html.AntiForgeryToken()
 
 <!DOCTYPE html>
@@ -158,6 +158,11 @@
         footer .container {
             padding: 0px;
         }
+
+        .underline{
+            border-bottom: 3px solid rgba(255, 107, 255, 0.3);
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -174,7 +179,9 @@
 
     <h1>@Model.Name</h1>
     <div class="description">
-        <p><strong>Biography:</strong> @Model.Bio</p>
+        <p><strong>Age:</strong> @Model.Age</p>
+        <h3><strong class="underline">Biography</strong></h3>
+        <p>@Model.Bio</p>
     </div>
 
     <div class="courses-list">

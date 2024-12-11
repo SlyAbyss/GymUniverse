@@ -22,27 +22,37 @@ namespace GymUniverse.Controllers
         [Authorize(Roles = "Administrator")]
         public IActionResult CreateTrainer(int locationId)
         {
-            var room = new Room
+            var viewModel = new CreateTrainerViewModel
             {
-                LocationId = locationId,
+                LocationId = locationId
             };
 
             ViewBag.LocationId = locationId;
-            return View();
+            return View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateTrainer(Trainer trainer)
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> CreateTrainer(CreateTrainerViewModel viewModel)
         {
-            ModelState.Remove(nameof(trainer.Location));
             if (ModelState.IsValid)
             {
+                var trainer = new Trainer
+                {
+                    Name = viewModel.Name,
+                    Age = viewModel.Age,
+                    ImageUrl = viewModel.ImageUrl,
+                    Bio = viewModel.Bio,
+                    LocationId = viewModel.LocationId
+                };
+
                 _context.Trainers.Add(trainer);
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction("LocationDetails", "Location", new { id = trainer.LocationId });
             }
 
-            return View(trainer);
+            return View(viewModel);
         }
 
         [HttpGet]
@@ -58,7 +68,18 @@ namespace GymUniverse.Controllers
                 return NotFound("Trainer not found.");
             }
 
-            return View(trainer);
+            var trainerViewModel = new TrainerDetailsViewModel
+            {
+                Id = trainer.Id,
+                Name = trainer.Name,
+                Age = trainer.Age,
+                Bio = trainer.Bio,
+                ImageUrl = trainer.ImageUrl,
+                Location = trainer.Location,
+                Courses = trainer.Courses.ToList()
+            };
+
+            return View(trainerViewModel);
         }
 
         [HttpGet]
@@ -71,10 +92,11 @@ namespace GymUniverse.Controllers
                 return NotFound("Trainer not found.");
             }
 
-            TrainerEditViewModel trainerView = new TrainerEditViewModel()
+            var trainerView = new TrainerEditViewModel
             {
-                Id = id,
+                Id = trainer.Id,
                 Name = trainer.Name,
+                Age = trainer.Age,
                 Bio = trainer.Bio,
                 ImageUrl = trainer.ImageUrl,
             };
@@ -93,6 +115,7 @@ namespace GymUniverse.Controllers
             }
 
             trainerToEdit.Name = trainer.Name;
+            trainerToEdit.Age = trainer.Age;
             trainerToEdit.Bio = trainer.Bio;
             trainerToEdit.ImageUrl = trainer.ImageUrl;
 
