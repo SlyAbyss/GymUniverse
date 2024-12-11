@@ -66,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENyZWF0ZUNvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Equipment/AddEquipment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XEFkZEVxdWlwbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Equipment/CreateEquipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XENyZWF0ZUVxdWlwbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -108,10 +112,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/MyCourses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlDb3Vyc2VzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Room/AddEquipment.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxBZGRFcXVpcG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Yajo/Desktop/SoftUni/ASP.NET Advanced/GymUniverse/GymUniverse/GymUniverse/Views/Room/CreateRoom.cshtml]

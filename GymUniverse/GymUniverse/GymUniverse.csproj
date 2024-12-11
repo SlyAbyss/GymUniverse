@@ -16,7 +16,7 @@
     <None Include="Views\Location\Index.cshtml" />
     <None Include="Views\Location\LocationDetails.cshtml" />
     <None Include="Views\MyCourses\Index.cshtml" />
-    <None Include="Views\Room\AddEquipment.cshtml" />
+    <None Include="Views\Equipment\AddEquipment.cshtml" />
     <None Include="Views\Room\CreateRoom.cshtml" />
     <None Include="Views\Room\RoomDetails.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />

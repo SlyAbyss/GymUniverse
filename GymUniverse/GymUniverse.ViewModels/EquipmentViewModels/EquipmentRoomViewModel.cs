@@ -13,5 +13,8 @@ namespace GymUniverse.ViewModels.EquipmentViewModels
         public string RoomName { get; set; }
         public List<Equipment> Equipment { get; set; }
         public List<int> SelectedEquipment { get; set; }
+
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
     }
 }
